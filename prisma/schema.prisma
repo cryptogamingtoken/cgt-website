@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Leaderboard {
+  id        Int      @id @default(autoincrement())
+  wallet    String
+  score     Int
+  gameBlock Int
+  createdAt DateTime @default(now())
+
+  claims    Claim[]  // One-to-many relationship (a wallet entry may have many claims)
+}
+
+model Claim {
+  id            Int      @id @default(autoincrement())
+  wallet        String   @unique
+  gameBlock     Int
+  claimedAt     DateTime @default(now())
+
+  leaderboardId Int?
+  leaderboard   Leaderboard? @relation(fields: [leaderboardId], references: [id])
+}
+
