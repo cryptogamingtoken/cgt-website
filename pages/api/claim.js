@@ -1,27 +1,22 @@
-import { verifyJWT } from '@/lib/auth/authSession';
-import prisma from '@/lib/prisma';
+import prisma from '@/lib/prisma'
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') return res.status(405).end();
+  if (req.method !== 'POST') return res.status(405).end()
 
-  const token = req.cookies.jwt;
-  if (!token) return res.status(401).json({ error: 'Not authenticated' });
+  const { address } = req.body
+  if (!address) return res.status(400).json({ error: 'No address provided' })
 
-  let user;
   try {
-    user = await verifyJWT(token);
+    const existing = await prisma.claim.findFirst({ where: { address } })
+    if (existing) {
+      return res.status(403).json({ error: 'Already claimed' })
+    }
+
+    await prisma.claim.create({ data: { address } })
+
+    return res.status(200).json({ success: true, txHash: '0xMOCKHASH' })
   } catch (err) {
-    return res.status(401).json({ error: 'Invalid session' });
+    console.error('Claim API error:', err)
+    return res.status(500).json({ error: 'Internal server error' })
   }
-
-  const { address } = user;
-
-  const existing = await prisma.claim.findFirst({ where: { address } });
-  if (existing) {
-    return res.status(403).json({ error: 'Already claimed' });
-  }
-
-  await prisma.claim.create({ data: { address } });
-
-  return res.status(200).json({ success: true, txHash: '0xMOCKHASH' });
 }

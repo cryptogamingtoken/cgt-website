@@ -10,8 +10,7 @@ export default function ClaimButton() {
 
     try {
       const res = await fetch('/api/claim', {
-        method: 'POST',
-        credentials: 'include',
+        method: 'POST'
       })
 
       const data = await res.json()
