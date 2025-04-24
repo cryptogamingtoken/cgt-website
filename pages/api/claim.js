@@ -1,22 +1,38 @@
-import prisma from '@/lib/prisma'
+// pages/api/claim.js
 
-export default async function handler(req, res) {
-  if (req.method !== 'POST') return res.status(405).end()
+let claimedWallets = new Set(); // In-memory session (resets on dev server restart)
 
-  const { address } = req.body
-  if (!address) return res.status(400).json({ error: 'No address provided' })
+export default function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  const cookie = req.headers.cookie || '';
+  const match = cookie.match(/mockSession=([^;]+)/);
+
+  if (!match) {
+    return res.status(401).json({ error: 'Not logged in' });
+  }
 
   try {
-    const existing = await prisma.claim.findFirst({ where: { address } })
-    if (existing) {
-      return res.status(403).json({ error: 'Already claimed' })
+    const session = JSON.parse(decodeURIComponent(match[1]));
+    const address = session.address;
+
+    if (!/^0x[a-fA-F0-9]{40}$/.test(address)) {
+      return res.status(400).json({ error: 'Invalid address in session' });
     }
 
-    await prisma.claim.create({ data: { address } })
+    if (claimedWallets.has(address)) {
+      return res.status(409).json({ error: 'Already claimed' });
+    }
 
-    return res.status(200).json({ success: true, txHash: '0xMOCKHASH' })
+    claimedWallets.add(address);
+
+    // Simulate a fake tx hash
+    const txHash = `0x${crypto.randomUUID().replace(/-/g, '').slice(0, 64)}`;
+
+    return res.status(200).json({ txHash });
   } catch (err) {
-    console.error('Claim API error:', err)
-    return res.status(500).json({ error: 'Internal server error' })
+    return res.status(400).json({ error: 'Malformed session cookie' });
   }
 }
