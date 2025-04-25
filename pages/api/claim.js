@@ -1,38 +1,40 @@
-// pages/api/claim.js
+import prisma from '@/prisma';
 
-let claimedWallets = new Set(); // In-memory session (resets on dev server restart)
-
-export default function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const cookie = req.headers.cookie || '';
-  const match = cookie.match(/mockSession=([^;]+)/);
+  const { wallet, gameBlock } = req.body;
 
-  if (!match) {
-    return res.status(401).json({ error: 'Not logged in' });
+  if (!wallet || typeof gameBlock !== 'number') {
+    return res.status(400).json({ error: 'Missing wallet or gameBlock' });
+  }
+
+  const leaderboardEntry = await prisma.leaderboard.findFirst({
+    where: { wallet, gameBlock },
+  });
+
+  if (!leaderboardEntry) {
+    return res.status(400).json({ error: 'Not on leaderboard for this game block' });
   }
 
   try {
-    const session = JSON.parse(decodeURIComponent(match[1]));
-    const address = session.address;
+    const claim = await prisma.claim.create({
+      data: {
+        wallet,
+        gameBlock,
+        leaderboardId: leaderboardEntry.id,
+      },
+    });
 
-    if (!/^0x[a-fA-F0-9]{40}$/.test(address)) {
-      return res.status(400).json({ error: 'Invalid address in session' });
-    }
-
-    if (claimedWallets.has(address)) {
-      return res.status(409).json({ error: 'Already claimed' });
-    }
-
-    claimedWallets.add(address);
-
-    // Simulate a fake tx hash
-    const txHash = `0x${crypto.randomUUID().replace(/-/g, '').slice(0, 64)}`;
-
-    return res.status(200).json({ txHash });
+    return res.status(200).json({ success: true, claim });
   } catch (err) {
-    return res.status(400).json({ error: 'Malformed session cookie' });
+    if (err.code === 'P2002') {
+      return res.status(409).json({ error: 'Already claimed for this game block' });
+    }
+
+    console.error(err);
+    return res.status(500).json({ error: 'Internal server error' });
   }
 }

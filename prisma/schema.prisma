@@ -18,12 +18,14 @@ model Leaderboard {
 }
 
 model Claim {
-  id            Int      @id @default(autoincrement())
-  wallet        String   @unique
-  gameBlock     Int
-  claimedAt     DateTime @default(now())
-
+  id           Int       @id @default(autoincrement())
+  wallet       String
+  gameBlock    Int
+  claimedAt    DateTime  @default(now())
   leaderboardId Int?
-  leaderboard   Leaderboard? @relation(fields: [leaderboardId], references: [id])
+  leaderboard  Leaderboard? @relation(fields: [leaderboardId], references: [id])
+
+  @@unique([wallet, gameBlock])
 }
+
 
