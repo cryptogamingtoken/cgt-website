@@ -15,6 +15,8 @@ model Leaderboard {
   createdAt DateTime @default(now())
 
   claims    Claim[]  // One-to-many relationship (a wallet entry may have many claims)
+
+  @@index([gameBlock, score(sort: Desc)])
 }
 
 model Claim {

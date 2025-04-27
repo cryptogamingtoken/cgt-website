@@ -1,32 +1,29 @@
-import { PrismaClient } from '@prisma/client';
-const prisma = new PrismaClient();
+import prisma from '@/lib/prisma';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
-    return res.status(405).json({ message: 'Method not allowed' });
+    return res.status(405).end(); // Method Not Allowed
   }
 
-  // Pagination: /api/leaderboard?page=1&limit=10
-  const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.limit) || 10;
-  const skip = (page - 1) * limit;
+  const { limit = 10, offset = 0, gameBlock } = req.query;
+
+  const where = gameBlock ? { gameBlock: Number(gameBlock) } : {};
 
   try {
-    const leaderboard = await prisma.leaderboard.findMany({
-      orderBy: { score: 'desc' },
-      skip,
-      take: limit
-    });
+    const [leaderboardEntries, totalCount] = await Promise.all([
+      prisma.leaderboard.findMany({
+        where,
+        orderBy: { score: 'desc' },
+        skip: Number(offset),
+        take: Number(limit),
+      }),
+      prisma.leaderboard.count({ where }),
+    ]);
 
-    const total = await prisma.leaderboard.count();
-
-    res.status(200).json({
-      page,
-      total,
-      data: leaderboard
-    });
+    res.setHeader('X-Total-Count', totalCount);
+    res.status(200).json(leaderboardEntries);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Error fetching leaderboard' });
+    console.error('Leaderboard fetch error:', error);
+    res.status(500).json({ error: 'Internal server error' });
   }
 }
