@@ -7,26 +7,27 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "seed": "prisma db seed"
-  },
-  "prisma": {
-    "seed": "node prisma/seed.js"
+    "seed": "tsx prisma/seed.ts",
+    "reset": "tsx scripts/reset.ts"
+
   },
   "dependencies": {
     "@prisma/client": "^6.6.0",
     "@tanstack/react-query": "^5.74.4",
     "@walletconnect/ethereum-provider": "^2.20.0",
     "next": "15.3.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-hot-toast": "^2.5.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
-    "eslint": "^9",
+    "@faker-js/faker": "^8.3.1",
+    "eslint": "^8",
     "eslint-config-next": "15.3.0",
     "prisma": "^6.6.0",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "ts-node": "^10.9.1",
+    "tsx": "^4.19.3"
   }
 }
