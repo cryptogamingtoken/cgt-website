@@ -1,10 +1,25 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+type HistoryEntry = {
+  id: string;
+  wallet: string;
+  gameBlock: number;
+  score: number;
+  claimed: boolean;
+  createdAt: string;
+};
+
+type HistoryApiResponse = {
+  data: HistoryEntry[];
+  total: number;
+  limit: number;
+  offset: number;
+};
 
 export default function HistoryPage() {
   const [wallet, setWallet] = useState('')
   const [gameBlock, setGameBlock] = useState('')
-  const [data, setData] = useState([])
+  const [data, setData] = useState<HistoryEntry[]>([])
   const [total, setTotal] = useState(0)
   const [minScore, setMinScore] = useState('');
   const [maxScore, setMaxScore] = useState('');
@@ -23,7 +38,7 @@ export default function HistoryPage() {
       if (minScore) params.minScore = minScore;
       if (maxScore) params.maxScore = maxScore;
       if (claimed) params.claimed = claimed;
-      const res = await axios.get('/api/history', { params })
+      const res = await axios.get<HistoryApiResponse>('/api/history', { params })
       setData(res.data.data)
       setTotal(res.data.total)
     } catch (err) {
