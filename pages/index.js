@@ -1,5 +1,5 @@
 import NavBar from '../components/NavBar'
-import ClaimButton from '@/components/ClaimButton'
+import ClaimButton from '../components/ClaimButton'
 
 export default function Home() {
   return (

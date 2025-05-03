@@ -5,7 +5,7 @@ export default function MockWalletManager() {
   const [selectedWallet, setSelectedWallet] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // Load wallets from localStorage
+  // Load from localStorage on mount
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem('mockWallets') || '[]');
     setWallets(stored);
@@ -24,23 +24,23 @@ export default function MockWalletManager() {
       });
       const data = await res.json();
 
-      if (!data.address) {
-        throw new Error('Invalid response');
+      if (!data.address) throw new Error('Invalid response');
+
+      const exists = wallets.some(w => w.address === data.address);
+      if (exists) {
+        console.log('Wallet already exists:', data.address);
+        return;
       }
 
-      // Check if already exists
-      const exists = wallets.some(w => w.address === data.address);
-      if (!exists) {
-        const newWallet = {
-          address: data.address,
-          createdAt: new Date().toISOString()
-        };
-        const updated = [...wallets, newWallet];
-        saveWallets(updated);
-        console.log('Wallet added:', newWallet);
-      } else {
-        console.log('Wallet already exists:', data.address);
-      }
+      const newWallet = {
+        address: data.address,
+        createdAt: data.createdAt,
+        score: data.score,
+        gameBlock: data.gameBlock,
+      };
+
+      const updated = [...wallets, newWallet];
+      saveWallets(updated);
     } catch (err) {
       console.error('Error generating wallet:', err);
     } finally {
@@ -50,51 +50,64 @@ export default function MockWalletManager() {
 
   const deleteWallet = (address) => {
     const updated = wallets.filter(w => w.address !== address);
-    if (selectedWallet === address) {
+    if (selectedWallet?.address === address) {
       setSelectedWallet(null);
     }
     saveWallets(updated);
   };
 
+  const claimTokens = async () => {
+    try {
+      console.log('🚀 Claiming with wallet:', selectedWallet?.address);
+      const res = await fetch('/api/claim', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify({
+          wallet: selectedWallet.address,
+          gameBlock: Number(selectedWallet.gameBlock),
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert('Claim successful!');
+      }  else {
+        alert(`Claim failed: ${data.error}`);
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Claim error.');
+    }
+  };
+
   return (
     <div className="p-4 max-w-xl mx-auto mt-6 border rounded shadow">
       <h2 className="text-lg font-medium mb-4 text-center text-gray-700">
-  Generate mock wallets, select one to log in and test claims.
-</h2>
+        Generate mock wallets, select one to log in and test claims.
+      </h2>
 
-{selectedWallet && (
-  <div className="mb-2 text-center text-sm text-green-700">
-    Currently selected: <span className="font-mono">{selectedWallet}</span>
-  </div>
-)}
-<div className="mt-4 text-center">
-  <button
-    onClick={async () => {
-      try {
-        const res = await fetch('/api/claim', {
-          method: 'POST',
-          credentials: 'include',
-        });
-        const data = await res.json();
+      {selectedWallet && (
+        <div className="mb-2 text-center text-sm text-green-700">
+          <div className="font-mono">
+            Selected Wallet: {selectedWallet.address}<br />
+          </div>
+        </div>
+      )}
 
-        if (res.ok) {
-          alert(`Claim successful!\nTxHash: ${data.txHash}`);
-        } else {
-          alert(`Claim failed: ${data.error}`);
-        }
-      } catch (err) {
-        console.error(err);
-        alert('Claim error.');
-      }
-    }}
-    className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
-  >
-    Claim Tokens
-  </button>
-</div>
-<br></br>
+      <div className="mt-4 text-center">
+        <button
+          onClick={claimTokens}
+          className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+        >
+          Claim Tokens
+        </button>
+      </div>
 
-      <div className="flex justify-center mb-4">
+      <div className="flex justify-center mt-4 mb-4">
         <button
           onClick={generateWallet}
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
@@ -112,7 +125,9 @@ export default function MockWalletManager() {
             <div
               key={wallet.address}
               className={`flex justify-between items-center border px-3 py-2 rounded ${
-                selectedWallet === wallet.address ? 'bg-yellow-100 border-yellow-400' : 'bg-white'
+                selectedWallet?.address === wallet.address
+                  ? 'bg-yellow-100 border-yellow-400'
+                  : 'bg-white'
               }`}
             >
               <div>
@@ -121,25 +136,24 @@ export default function MockWalletManager() {
                   Created: {new Date(wallet.createdAt).toUTCString()}
                 </div>
               </div>
+
               <div className="space-x-2">
                 <button
-                 onClick={async () => {
-                    setSelectedWallet(wallet.address);
+                  onClick={async () => {
+                    setSelectedWallet(wallet);
                     try {
-                        const res = await fetch('/api/login', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ address: wallet.address }),
-                            credentials: 'include', // <-- Required to store cookie in browser
-                          });
-                          
+                      const res = await fetch('/api/login', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ address: wallet.address }),
+                        credentials: 'include',
+                      });
                       const data = await res.json();
                       console.log('Login response:', data);
                     } catch (err) {
                       console.error('Login failed:', err);
                     }
                   }}
-                  
                   className="text-green-700 hover:underline text-sm"
                 >
                   Select
@@ -155,14 +169,6 @@ export default function MockWalletManager() {
           ))}
         </div>
       )}
-
-      {selectedWallet && (
-        <div className="mt-4 text-center text-sm text-green-700">
-          Selected Wallet: <span className="font-mono">{selectedWallet}</span>
-        </div>
-      )}
     </div>
-    
   );
 }
-

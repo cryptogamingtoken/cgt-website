@@ -1,4 +1,4 @@
-import prisma from '@/prisma';
+import prisma from '@/lib/prisma';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -11,9 +11,15 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Missing wallet or gameBlock' });
   }
 
+  console.log('🔍 Looking for leaderboard entry with:');
+  console.log('Wallet:', wallet);
+  console.log('GameBlock:', gameBlock);
+
   const leaderboardEntry = await prisma.leaderboard.findFirst({
     where: { wallet, gameBlock },
   });
+
+  console.log('📋 Leaderboard entry found:', leaderboardEntry);
 
   if (!leaderboardEntry) {
     return res.status(400).json({ error: 'Not on leaderboard for this game block' });
@@ -34,7 +40,7 @@ export default async function handler(req, res) {
       return res.status(409).json({ error: 'Already claimed for this game block' });
     }
 
-    console.error(err);
+    console.error('❌ Claim error:', err);
     return res.status(500).json({ error: 'Internal server error' });
   }
 }
