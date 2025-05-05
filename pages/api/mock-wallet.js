@@ -1,16 +1,8 @@
 // pages/api/mock-wallet.js
 
-// 1) Module‐load check
-console.log('[mock-wallet] module loaded');
-
 import prisma from '@/lib/prisma';
 
-// 2) Prisma import check
-console.log('[mock-wallet] prisma import OK');
-
 export default async function handler(req, res) {
-  // 3) Handler entry
-  console.log('[mock-wallet] handler invoked; method=', req.method);
 
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST']);
@@ -18,7 +10,6 @@ export default async function handler(req, res) {
   }
 
   try {
-    console.log('[mock-wallet] about to create leaderboard entry');
 
     // Generate mock data
     const randomHex = [...Array(40)]
@@ -34,9 +25,6 @@ export default async function handler(req, res) {
       data: { wallet: address, score, gameBlock, createdAt },
     });
 
-    // 4) Success log
-    console.log('[mock-wallet] prisma create OK:', newEntry);
-
     return res.status(200).json({
       address:   newEntry.wallet,
       score:     newEntry.score,
@@ -44,8 +32,6 @@ export default async function handler(req, res) {
       createdAt: newEntry.createdAt,
     });
   } catch (err) {
-    // 5) Error log
-    console.error('[mock-wallet] ERROR in handler:', err);
     return res.status(500).json({ error: 'Internal Server Error' });
   }
 }
