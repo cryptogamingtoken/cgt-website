@@ -1,4 +1,4 @@
-// pages/api/mock-wallet.js
+/* // pages/api/mock-wallet.js
 import prisma from '@/lib/prisma';
 
 export default async function handler(req, res) {
@@ -42,4 +42,23 @@ export default async function handler(req, res) {
     console.error('Failed to insert mock wallet into leaderboard:', err);
     return res.status(500).json({ error: 'Internal Server Error' });
   }
+}
+*/
+
+// pages/api/mock-wallet.js
+
+export default function handler(req, res) {
+  // only allow POST
+  if (req.method !== 'POST') {
+    res.setHeader('Allow', ['POST']);
+    return res.status(405).end('Method Not Allowed');
+  }
+
+  // always return this dummy JSON
+  return res.status(200).json({
+    address: '0x' + '0'.repeat(40),
+    score: 0,
+    gameBlock: 0,
+    createdAt: new Date().toISOString(),
+  });
 }
