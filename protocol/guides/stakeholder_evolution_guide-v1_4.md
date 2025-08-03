@@ -1,9 +1,9 @@
 # 📘 Stakeholder Evolution Sprint Guide
 
-**File:** `stakeholder-evolution-guide-v1.5.0.md`  
-**Purpose:** Master PM reference for launching, executing, and concluding each stakeholder evolution sprint in the CGT Protocol.  
-**Last Updated:** 2025-07-20  
-**Version:** `v1.5.0-stakeholder-evolution-guide`
+**File:** `stakeholder-evolution-guide-v1.4.0.md`\
+**Purpose:** Master PM reference for launching, executing, and concluding each stakeholder evolution sprint in the CGT Protocol.\
+**Last Updated:** 2025-07-16\
+**Version:** `v1.4.0-stakeholder-evolution-guide`
 
 ---
 
@@ -302,104 +302,4 @@ Each derived artifact must map directly to affordances claimed at the stakeholde
 
 **🔐 Status:** ✅ Finalized\
 **Author:** Assistant to Mr. Ridley
-
-## 📎 Appendix C – Schema Entry Derivation from Affordances
-
-**Introduced:** 2025-07-19  
-**Version:** `v1.5.0-stakeholder-evolution-guide`  
-**Sprint Reference:** `pre‑R‑1z-primer – Stakeholder L0/L1 Primer Matrix`
-
----
-
-### 🧭 Purpose
-
-This appendix defines a consistent, low-fragmentation method for deriving schema entries from stakeholder affordances. The goal is to ensure that affordances drive schema evolution in a way that is:
-
-- 🔄 Cyclically reinforcing (affordances → artifacts → schema → back to affordances)
-- 🧩 Modular (each schema entry has a justifying affordance trail)
-- ✅ Minimal and active-first (schema only grows with live-relevant entries)
-- 📈 Supportive of stakeholder growth (rather than forcing future-level entanglement)
-
----
-
-### 🛠️ Core Rule
-
-> All schema entries must **either support a current affordance** or reflect a **direct artifact output** derived from that affordance.
-
-This creates a clear "affordance effect" rule:
-
-- Schema entries are not blocked or speculative  
-- Schema entries are never detached from current stakeholder logic  
-- Schema grows with direct stakeholder expression, not projection
-
-🧮 **Multi-Affordance Entries Allowed (Level Bundles)**  
-If multiple affordances combine into a single milestone (e.g. Level 1.1 for Founders), schema entries **may be derived from grouped artifacts** — but must still trace clearly to each contributing affordance.  
-
-This supports milestone-driven evolution while keeping derivation logic transparent.
-
-Example:
-`/schema/v1/founders/protocol-meta.json` ← derived from Artifact: ProtocolMetaControl (from Affordance: F‑1.1, F‑1.2, F‑1.3, F‑1.4)
-
----
-
-### 🔁 Derivation Method
-
-1. **Identify Affordance**  
-   Start with a Level N affordance (e.g., `Observe protocol schema changes`)
-
-2. **Define Ecosystem Effect**  
-   Ask: “What visible effect would this affordance require or trigger in the schema?”
-
-3. **Draft Entry Type**  
-   Choose entry form:
-   - `📄 Static (e.g. .json config)`
-   - `📊 Dynamic (index or counter)`
-   - `🔍 Observable (e.g. list, explorer)`
-   - `🧪 Testable (e.g. schema test point)`
-
-4. **Check Activity Level**  
-   Ensure the schema entry has one of the following:
-   - A live effect (viewable, queryable, or simulated)
-   - A concrete derivation from a real artifact
-   - A simplified/flattened version that supports a draft affordance
-
-5. **Tag With Origin**  
-   Always include:
-   ← derived from Artifact: [Name] (from Affordance: X‑N.N)
-
-   
----
-
-### 🎯 Example
-
-**Affordance:** `Observe protocol schema changes` (DAO L1)  
-**Effect Needed:** DAO must see what schema entries exist or have changed  
-**Schema Entry:**  /schema/v1/dao/schema-list.json ← derived from Artifact: SchemaIndex (from Affordance: D‑1.1)
-
-This entry might list the count or identifiers of all current entries, fulfilling the affordance without needing full DAO activation.
-
----
-
-### ✅ Integration Logic
-
-This method slots in *after* artifact derivation and before schema commits. It enables:
-
-- Active-only schema growth  
-- Direct affordance justification  
-- Lower misalignment risk between stakeholder levels  
-- Reinforced schema-as-proof architecture
-
----
-
-### 🧠 Master PM Notes
-
-- You may **always skip** a schema entry if the affordance doesn’t require one  
-- You may **create a flattened version** of a schema entry if complexity blocks implementation  
-- Never add schema entries that are just “planned” — use artifact tracking for those instead
-
----
-
-**🔐 Status:** ✅ Finalized  
-**Author:** Assistant to Mr. Ridley  
-**Linked Sprint:** `pre‑R‑1z-primer – Stakeholder L0/L1 Primer Matrix`
 

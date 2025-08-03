@@ -1,0 +1,10 @@
+### 📦 Protocol Schema
+
+All current schema definitions (draft or live) are located under:
+
+`/protocol/schema/v1/`
+
+Use this for:
+- Understanding stakeholder affordances
+- Reviewing schema-bound logic
+- Drafting future protocol layers
