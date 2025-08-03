@@ -23,12 +23,10 @@
 
 ### 🧩 File Updates
 
-- `stakeholder-evolution.md`: Matrix and affordance references updated  
-- `reflections/core-developers/1-6.md`: New Level 1 affordance reflections  
-- `stakeholder-evolution-guide.md`: No structural changes — reused formatting  
-- `CHANGELOG.md`: This entry
+- `stakeholder-evolution.md`: Matrix and affordance references updated   
 
-🔐 This version locks Core Developer L1 as complete.
+
+🔐 This version locks Core Developer Affordances L1 as complete.
 
 ## 📄 stakeholder-evolution-guide.md  
 **Date:** 2025-07-20  

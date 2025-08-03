@@ -299,7 +299,7 @@ The DAO scaffolding layer activates — not yet with proposal mechanics or token
 | **CGT Service Providers**   | Must have offered onboarding or support services tied to at least 1 GQT and verified by the client side (wallet or creator log).        | Service verification attestations or metadata tags (e.g. “onboardedBy”: walletX).                                      | DAO can audit service legitimacy; providers gain influence only with usage or trust confirmations.                    |
 
 
-<!--
+
 🎯 Affordance Strategy Reflection – Founders Level 0
 Affordance: (1) Maintain platform custodianship and narrative control
 
@@ -321,7 +321,7 @@ Proof:
 📝 Public protocol updates or content pieces authored by Founders that explicitly signal directional control over stakeholder sequencing.
 
 Status: ✅ Approved
--->
+
 
 ## 🧩 Founders – L0/L1 Primer (Draft State)
 
@@ -329,7 +329,7 @@ Status: ✅ Approved
 
 - 🧭 Maintain platform custodianship and narrative control  
   Steward platform custodianship and stakeholder narrative integrity through a functional story arc of each stakeholder—how they evolve, earn trust, and gain influence.
-<!--
+
 🎯 Affordance Strategy Reflection – Founders Level 0
 Affordance: (2) Roadmap control
 
@@ -351,7 +351,7 @@ Proof:
 📣 Messaging in updates and onboarding that explains sequencing logic
 
 Status: ✅ Approved
--->
+
 
 ## 🧩 Founders – L0/L1 Primer (Draft State)
 
@@ -360,7 +360,7 @@ Status: ✅ Approved
 - 🧭 Roadmap control  
   Control the release and activation timeline of protocol components and stakeholders, maintaining behavioral pacing and ensuring features are introduced in an order that supports trust, clarity, and inter-role sequencing.
 
-<!--
+
 🎯 Affordance Strategy Reflection – Founders Level 0
 Affordance: (3) Protocol definition authority
 
@@ -383,7 +383,7 @@ Proof:
 🗂️ Founders issue a time-aware declaration of what the protocol currently *is*, and what is meant to be replaced by the ecosystem
 
 Status: ✅ Approved
--->
+
 
 ## 🧩 Founders – L0/L1 Primer (Draft State)
 
@@ -393,7 +393,7 @@ Status: ✅ Approved
   Define and communicate the behavioral boundaries of the protocol during mock stages, distinguishing core rules and primitives from experimental or application-layer logic to ensure ecosystem alignment and future governance legitimacy.
 
 
-<!--
+
 🎯 Affordance Strategy Reflection – Founders Level 1
 Affordance: (1) Finalize GQT scaffolding
 
@@ -416,7 +416,7 @@ Proof:
 🧭 Public Founder declaration: “What is GQT as a behavioral system”
 
 Status: ✅ Approved
--->
+
 
 ## 🧩 Founders – L0/L1 Primer (Draft State)
 
@@ -425,7 +425,7 @@ Status: ✅ Approved
 - 🧭 Finalize GQT scaffolding  
   Finalize the initial scaffolding of the GQT behavioral system by establishing Game, Quiz, and Test as the core compositional axes of protocol logic—providing the foundational grammar that underpins all future gameplay, evaluation, and interaction formats.
 
-<!--
+
 🎯 Affordance Strategy Reflection – Founders Level 1
 Affordance: (2) Finalize Core Schema
 
@@ -458,9 +458,9 @@ Proof:
 🧭 Public Founder explanation: “What the core schema expresses and why it matters”
 
 Status: ✅ Approved
--->
 
-<!--
+
+
 🎯 Affordance Strategy Reflection – Founders Level 1
 Affordance: (3) Finalize Narrative Shape
 
@@ -484,9 +484,9 @@ Proof:
 
 
 Status: ⏳ Drafting
--->
 
-<!--
+
+
 🎯 Affordance Strategy Reflection – Founders Level 1
 Affordance: (4) Lead mock protocol specification
 
@@ -509,9 +509,9 @@ Proof:
 📣 Publicly shared mock protocol overview issued by Founders
 
 Status: ⏳ Drafting
--->
 
-<!--  
+
+ 
 🎯 Affordance Strategy Reflection – Core Developers  Level 0 
 Affordance: (1) Build MVP Backend
 
@@ -541,9 +541,9 @@ Proof:
 🛠️ Test suite or CLI runner that generates fake state for simulation
 
 Status: ⏳ Drafting
--->
 
-<!--  
+
+
 🎯 Affordance Strategy Reflection – Core Developers  Level 0 
 Affordance: (2) Build MVP Frontend
 
@@ -575,9 +575,8 @@ Proof:
 🔍 Developers publish README or walkthrough of simulation UI logic
 
 Status: ⏳ Drafting
--->
 
-<!--
+
 🎯 Affordance Strategy Reflection – Core Developers  Level 0 
 Affordance: (3) Implement Leaderboard (Mock MVP)
 
@@ -611,8 +610,8 @@ Proof:
 📸 Used in educational screenshots and walkthroughs  
 
 Status: ⏳ Drafting
--->
-<!--
+
+
 🎯 Affordance Strategy Reflection – Core Developers  Level 0 
 Affordance: (4) Implement Mock Claim System
 
@@ -641,8 +640,8 @@ Proof:
 ✅ Claim attempts expire after 28-day mock window (or equivalent stubbed logic)
 
 Status: ✅ Approved
--->
-<!--
+
+
 🎯 Affordance Strategy Reflection – Core Developers Level 0  
 Affordance: (5) Build Explorer Interface
 
@@ -677,8 +676,8 @@ Proof:
 🧭 Referenced by founders, players, and builders as a validation tool
 
 Status: ✅ Approved
--->
-<!--
+
+
 🎯 Affordance Strategy Reflection – Core Developers Level 0 
 Affordance: (6) Build Wallet Flow
 
@@ -711,8 +710,7 @@ Proof:
 📁 Mock wallet identity logic is isolated and testable in codebase.
 
 Status: ✅ Approved
--->
-<!--
+
 🎯 Affordance Strategy Reflection – Core Developers  Level 0
 Affordance: (7) Publish Protocol Schema Draft
 
@@ -746,8 +744,8 @@ Proof:
 🧭 Developers publicly document schema shape or issue a spec-to-schema mapping summary
 
 Status: ⏳ Drafting
--->
-<!--
+
+
 🎯 Affordance Strategy Reflection – Core Developers Level 1
 Affordance: (1) Build a playable mock version of the main CGT game
 
@@ -779,8 +777,8 @@ Without a playable mock version:
 📈 Observed player behavior informs UI/UX feedback cycles
 
 **Status:** ✅ Implemented
--->
-<!--
+
+
 🎯 Affordance Strategy Reflection – Core Developers Level 1
 Affordance: (2) Simulate leaderboard logic for ranking players off-chain
 
@@ -811,8 +809,7 @@ If leaderboard simulation is incomplete:
 ✅ Mock entries tied to unique wallet sessions with constraints to avoid abuse
 
 **Status:** ✅ Implemented
--->
-<!--
+
 🎯 Affordance Strategy Reflection – Core Developers Level 1
 Affordance: (3) Implement score submission logic
 
@@ -842,9 +839,7 @@ If score submission fails or is unreliable:
 ✅ Leaderboard updates within mock latency SLA (<500 ms).
 
 **Status:** ⏳ Drafting
--->
 
-<!--
 🎯 Affordance Strategy Reflection – Core Developers Level 1
 Affordance: (4) Create session-based token-gating logic
 
@@ -874,9 +869,7 @@ Without gating:
 📸 Demo flow: connect mock wallet → play → submit score → claim (if gated).
 
 **Status:** ⏳ Drafting
--->
 
-<!--
 🎯 Affordance Strategy Reflection – Core Developers  Level 1
 Affordance: (5) Simulate off-chain reward distribution
 
@@ -906,10 +899,8 @@ If the mock reward distribution is omitted or left incomplete:
 📄 Rewards reference `scoreEntries` and generate mock txHashes for claim traceability.  
 📘 Rewards are viewable in the History Explorer and testable via API.  
 🔐 Claims fail if reward is missing or already claimed (validates logic loop).
--->
 
 
-<!--
 🎯 Affordance Strategy Reflection – Core Developers  Level 1
 Affordance: (6) Link leaderboard to mock claim system
 
@@ -945,4 +936,4 @@ If this link is missing or flawed:
 🧪 Unit tests cover valid, duplicate, and ineligible claim scenarios.
 
 **Status:** ⏳ Drafting
--->
+
