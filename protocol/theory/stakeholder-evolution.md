@@ -300,83 +300,77 @@ The DAO scaffolding layer activates — not yet with proposal mechanics or token
 
 
 
-🎯 Affordance Strategy Reflection – Founders Level 0
-Affordance: (1) Maintain platform custodianship and narrative control
+### 🎯 Affordance Strategy Reflection – Founders Level 0
+#### Affordance: (1) Maintain platform custodianship and narrative control
 
-Definition:
+**Definition:**
 Founders maintain custodianship of the platform’s directional integrity, including its evolving multi-stakeholder narrative. This means defining the functional story arc of each stakeholder: how they evolve, earn trust, and gain influence; establishing the sequence of visibility (who appears first and why); and curating the founder’s voice as both central authority and meta-curator of role interactions.
 
-Strategic Function:
+**Strategic Function:**
 This affordance isn’t just directional — it’s ecosystem-shaping. Founders are responsible for shaping the onboarding mental model of every other stakeholder. Their custodianship ensures alignment across stakeholder roles in tone, trust structure, and sequencing. Without it, the protocol loses coherence, and stakeholder growth becomes fragmented or misinterpreted.
 
-Dependencies:
+**Dependencies:**
 No external dependency, but custodianship must stay aware of ecosystem readiness — Core Devs (game loop), Players (usage and claims), Marketing (sandbox visibility), and Creators (GQT publishing activity). All of these affect how narrative timing must be exercised.
 
-Failure Risk:
+**Failure Risk:**
 Protocol drift. Misaligned stakeholder assumptions. Conflicting onboarding experiences. Tone fragmentation. Premature decentralization vocabulary that undermines role formation.
 
-Proof:
+**Proof:**
 🧭 A stakeholder narrative map or onboarding draft that outlines role paths and growth arcs.  
 🎓 Messaging in early docs, whitepapers, or platform UI that presents each stakeholder with clear functional positioning and purpose.  
 📝 Public protocol updates or content pieces authored by Founders that explicitly signal directional control over stakeholder sequencing.
 
 Status: ✅ Approved
 
+#### 🔍 Expanded Affordance Statement
 
-## 🧩 Founders – L0/L1 Primer (Draft State)
-
-### 🔍 Expanded Affordances (L0 → L2 Prep)
-
-- 🧭 Maintain platform custodianship and narrative control  
+**🧭 Maintain platform custodianship and narrative control**  
   Steward platform custodianship and stakeholder narrative integrity through a functional story arc of each stakeholder—how they evolve, earn trust, and gain influence.
 
-🎯 Affordance Strategy Reflection – Founders Level 0
-Affordance: (2) Roadmap control
+### 🎯 Affordance Strategy Reflection – Founders Level 0
+#### Affordance: (2) Roadmap control
 
-Definition:
+**Definition:**
 Founders define, stage, and coordinate the release of all protocol components, stakeholder activations, and visibility milestones. This includes the timing and order of feature rollouts (e.g., mock game loop, publishing access, leaderboard claims), and the pacing of stakeholder participation across mock and live phases.
 
-Strategic Function:
+**Strategic Function:**
 Roadmap control governs the protocol’s behavioral progression. It ensures simulation events happen in the correct order, builds stakeholder trust through visible stability, and avoids role confusion or premature feature exposure. Without it, the ecosystem may evolve in fragments or generate false signals of readiness.
 
-Dependencies:
+**Dependencies:**
 Requires observability of Core Dev progress (game loop stability), Player feedback (mock behavior patterns), Creator milestones (GQT publishing), and Marketing activation. Timeline adjustments must reflect readiness signals while preserving strategic staging intent.
 
-Failure Risk:
+**Failure Risk:**
 Stakeholders activate out of sync. Features appear disconnected from usage context. Founders lose narrative authority over sequencing. Trust erodes due to chaotic pacing or reactive decision-making.
 
-Proof:
+**Proof:**
 🗺️ Founder-authored roadmap, milestone ladder, or release calendar  
 📈 Time-locked activation of features and roles  
 📣 Messaging in updates and onboarding that explains sequencing logic
 
 Status: ✅ Approved
 
+#### 🔍 Expanded Affordance Statement
 
-## 🧩 Founders – L0/L1 Primer (Draft State)
-
-### 🔍 Expanded Affordances (L0 → L2 Prep)
-
-- 🧭 Roadmap control  
+**🧭 Roadmap control** 
   Control the release and activation timeline of protocol components and stakeholders, maintaining behavioral pacing and ensuring features are introduced in an order that supports trust, clarity, and inter-role sequencing.
 
 
-🎯 Affordance Strategy Reflection – Founders Level 0
-Affordance: (3) Protocol definition authority
+### 🎯 Affordance Strategy Reflection – Founders Level 0
+#### Affordance: (3) Protocol definition authority
 
-Definition:
+**Definition:**
 Founders carry the responsibility to define and communicate what constitutes the protocol during its formative, centralized stages. This includes establishing behavioral boundaries between core rules (e.g., rewards logic, GQT schema, leaderboard constraints) and experimental or application-layer features. This definition is transitional: it exists to create stability, coherence, and early trust until the ecosystem matures enough to self-define through usage, participation, and constitutional norms.
 
-Strategic Function:
+**Strategic Function:**
 This affordance establishes the initial trust surface of the protocol. It allows other stakeholders to act with clarity in a mock environment and avoids ambiguity about what is canon. Crucially, it also signals that Founder authority is **provisional** — designed to be outgrown. Protocol legitimacy must eventually derive from stakeholder consensus, not Founder declarations.
 
-Dependencies:
+**Dependencies:**
 All stakeholders rely on this affordance for coordination. Core Devs build to canonical logic. Creators shape GQTs using official schema. Players and Stakers rely on declared reward behavior. Marketing messages gain coherence from clearly defined protocol status.
 
-Failure Risk:
+**Failure Risk:**
 If protocol boundaries are undefined or treated as permanent Founder property, decentralization is compromised. If definitions shift without clarity, trust breaks. If the Founder never prepares to yield this role, constitutional legitimacy is delayed or rejected.
 
-Proof:
+**Proof:**
 📜 Public document or whitepaper section defines mock protocol vs. app behavior  
 📐 GQT schema is versioned and declared canonical  
 🧪 Mock reward and leaderboard behaviors declared as protocol primitives  
@@ -385,31 +379,29 @@ Proof:
 Status: ✅ Approved
 
 
-## 🧩 Founders – L0/L1 Primer (Draft State)
+#### 🔍 Expanded Affordance Statement
 
-### 🔍 Expanded Affordances (L0 → L2 Prep)
-
-- 🧭 Protocol definition authority  
+**🧭 Protocol definition authority**  
   Define and communicate the behavioral boundaries of the protocol during mock stages, distinguishing core rules and primitives from experimental or application-layer logic to ensure ecosystem alignment and future governance legitimacy.
 
 
 
-🎯 Affordance Strategy Reflection – Founders Level 1
-Affordance: (1) Finalize GQT scaffolding
+### 🎯 Affordance Strategy Reflection – Founders Level 1
+#### Affordance: (1) Finalize GQT scaffolding
 
-Definition:
+**Definition:**
 Founders are responsible for finalizing the initial scaffolding of the GQT system — a behavioral composition model based on the core dimensions of Game, Quiz, and Test. This does not mean fixing a format or structure. It means establishing the axis logic and interaction rules that enable all protocol behavior to be expressed, simulated, and eventually governed with shared meaning.
 
-Strategic Function:
+**Strategic Function:**
 This affordance defines the protocol’s universal behavioral grammar. By activating G/Q/T as composable logic primitives, the Founders create a foundation for all future forms of interaction — including games, assessments, experiences, and unknown hybrids. Scaffolding means clarity, not constraint: it opens pathways for developers, creators, and validators to align on behavioral identity.
 
-Dependencies:
+**Dependencies:**
 Core Developers interpret axis configs into logic branches. Players receive feedback based on G/Q/T behavior. Creators build using declared blends. Explorers and ecosystem tools begin indexing and visualizing behavior by axis profile. DAO framing will eventually rely on this foundation for gameplay trust layers.
 
-Failure Risk:
+**Failure Risk:**
 Without this scaffold, compositional logic fragments. Player behavior is ungrounded. Creators design without shared affordances. Simulation becomes incoherent. The protocol drifts toward UX mimicry rather than protocol maturity. Trust never roots.
 
-Proof:
+**Proof:**
 📐 Schema or doc that defines G/Q/T as core protocol axes  
 🧪 Early use cases or mocks declare and simulate G/Q/T blends  
 📊 Ecosystem tools visualize axis identity per interaction  
@@ -417,32 +409,29 @@ Proof:
 
 Status: ✅ Approved
 
+#### 🔍 Expanded Affordance Statement
 
-## 🧩 Founders – L0/L1 Primer (Draft State)
-
-### 🔍 Expanded Affordances (L0 → L2 Prep)
-
-- 🧭 Finalize GQT scaffolding  
+**🧭 Finalize GQT scaffolding** 
   Finalize the initial scaffolding of the GQT behavioral system by establishing Game, Quiz, and Test as the core compositional axes of protocol logic—providing the foundational grammar that underpins all future gameplay, evaluation, and interaction formats.
 
 
-🎯 Affordance Strategy Reflection – Founders Level 1
-Affordance: (2) Finalize Core Schema
+### 🎯 Affordance Strategy Reflection – Founders Level 1
+#### Affordance: (2) Finalize Core Schema
 
-Definition:  
+**Definition:**
 Founders are responsible for finalizing the minimum viable core schema of the protocol — a structural framework that models the presence, roles, and relationships of all stakeholders during the protocol’s formative stage. “Finalize” at this level does not mean completing all schema contents, but rather defining the scaffold that can accommodate live, mock, or placeholder entries for each core participant type.
 
-Strategic Function:  
+**Strategic Function:**
 This affordance enables the entire stakeholder ecosystem to be modeled and simulated in advance of live protocol activation. By defining schema visibility and ownership conventions, Founders lay the groundwork for coordination, versioning, access control, and cross-stakeholder interaction. This structure guides artifact emergence, simulation, and readiness scoring across all future layers of evolution.
 
-Dependencies:  
+**Dependencies:**
 Players depend on schema entries to claim, submit, and view participation history.  
 Creators require schema mappings to publish and track GQTs.  
 The DAO relies on consistent schema indexing for future governance tracking.  
 Developers use the schema as the source of truth for implementation paths.  
 The publishing and exploration layers depend on schema visibility to present system-wide state.
 
-Failure Risk:  
+**Failure Risk:**  
 Without this affordance, the protocol cannot coordinate stakeholder affordances or validate readiness.  
 Artifact emergence is fragmented.  
 Evolution pathways become invisible or ambiguous.  
@@ -450,7 +439,7 @@ Mock systems cannot scale or synchronize.
 DAO transition becomes structurally impossible.  
 The protocol remains reactive rather than governed.
 
-Proof:  
+**Proof:**  
 📐 Schema folder exists with stakeholder-type folders (e.g. `players/`, `founders/`)  
 📘 Schema entries are versioned and named via artifact alignment  
 🔖 All active L0/L1 stakeholders have at least one schema entry  
@@ -460,23 +449,22 @@ Proof:
 Status: ✅ Approved
 
 
+### 🎯 Affordance Strategy Reflection – Founders Level 1
+#### Affordance: (3) Finalize Narrative Shape
 
-🎯 Affordance Strategy Reflection – Founders Level 1
-Affordance: (3) Finalize Narrative Shape
-
-Definition:
+**Definition:**
 Founders are responsible for setting the core narrative scaffolding that defines the protocol’s identity, arc, and alignment logic. This does not mean defining every message or campaign. It means framing the worldview that shapes how GQTs, games, and stakeholder roles are interpreted and evolved across the ecosystem.
 
-Strategic Function:
+**Strategic Function:**
 This narrative creates internal coherence. It ensures that developers, creators, players, and ecosystem builders are not just building components—but participating in a shared evolution. A strong narrative enables alignment without top-down enforcement. It governs protocol shape through meaning rather than mandates.
 
-Dependencies:
+**Dependencies:**
 Marketing translates narrative arcs into public-facing content. Players interpret scoring as part of a larger purpose. DAO evaluations hinge on shared origin stories and framings. The schema itself gains clarity and trust from the presence of a unifying arc. Narrative shape also influences game dynamics, artifact labeling, and even incentive design.
 
-Failure Risk:
+**Failure Risk:**
 Without this affordance, the protocol fragments into disconnected features and game mechanics. Builders make incompatible assumptions. Players don’t see continuity between games. DAO narratives splinter. Trust collapses not from bad behavior—but from incoherent meaning.
 
-Proof:
+**Proof:**
 📖 Narrative doc or scaffold that defines the protocol worldview  
 🌀 GQTs show traceable alignment to this story structure  
 🗺️ Public documentation reflects shared terminology and framing  
@@ -486,23 +474,22 @@ Proof:
 Status: ⏳ Drafting
 
 
+### 🎯 Affordance Strategy Reflection – Founders Level 1
+#### Affordance: (4) Lead mock protocol specification
 
-🎯 Affordance Strategy Reflection – Founders Level 1
-Affordance: (4) Lead mock protocol specification
-
-Definition:
+**Definition:**
 Founders are responsible for shaping and publishing the initial specification of the protocol in mock form. This does not mean defining every rule or constraint — it means producing a coherent system sketch that captures how the protocol behaves, rewards, governs, and evolves during its pre-chain phase.
 
-Strategic Function:
+**Strategic Function:**
 This affordance ensures the entire ecosystem has a stable behavioral reference. While not yet blockchain-enforced, the mock specification governs the logic of GQT configs, reward flows, leaderboard claims, role boundaries, and artifact routing. It enables simulated affordance testing across all stakeholders before hard commitments.
 
-Dependencies:
+**Dependencies:**
 Developers implement mock behavior using this spec. Ecosystem creators align with versioning, routing, and reward definitions. Players earn based on the system described here. Marketing references this as the source of “how CGT works.” DAOs will eventually ratify or replace it with on-chain equivalents. Founders remain accountable for coherence during the simulation era.
 
-Failure Risk:
+**Failure Risk:**
 Without a clear mock specification, the protocol functions as a loose federation of tools. Claims and rewards become arbitrary. Affordance modeling collapses. No schema can hold. No gameBlock can be trusted. Ecosystem actors build contradictory assumptions. The entire behavioral core risks fragmentation before decentralization even begins.
 
-Proof:
+**Proof:**
 📘 `/specs/protocol-mock-spec-v1.json` or equivalent human-readable spec  
 🧪 Mock affordance tests reference this document as source of truth  
 🔁 GQT configs, routing logic, and gameBlocks align with this version  
@@ -511,29 +498,28 @@ Proof:
 Status: ⏳ Drafting
 
 
- 
-🎯 Affordance Strategy Reflection – Core Developers  Level 0 
-Affordance: (1) Build MVP Backend
+### 🎯 Affordance Strategy Reflection – Core Developers  Level 0 
+#### Affordance: (1) Build MVP Backend
 
-Definition:  
+**Definition:**  
 Core Developers are responsible for constructing the backend logic that enables mock gameplay operations, score recording, claim validation, and leaderboard output. This includes server-side routes, database schemas, mock session auth, and any logic necessary to simulate protocol behavior prior to on-chain implementation.
 
-Strategic Function:  
+**Strategic Function:**  
 The backend forms the **behavioral spine** of the protocol. It allows Players, Founders, and Reward Organisers to interact with GQT-like experiences while the actual CGT token and blockchain stack are still in planning. It also acts as the simulation base for schema testing, affordance triggers, and ecosystem readiness scoring. This affordance ensures the protocol can **exist as a coherent system** before any smart contract is deployed.
 
-Dependencies:  
+**Dependencies:**  
 Players depend on backend logic to submit scores and trigger leaderboard responses.  
 Claim validation relies on backend rules for timing, eligibility, and uniqueness.  
 Marketing needs endpoints to showcase demos and walkthroughs.  
 Founders simulate core protocol interactions through backend state.
 
-Failure Risk:  
+**Failure Risk:**  
 Without a functioning backend, the protocol cannot simulate play, score, or reward.  
 No stakeholder can meaningfully test their affordances.  
 Mock ecosystem progress halts.  
 The protocol remains speculative, blocking narrative alignment, schema validation, and DAO evolution.
 
-Proof:  
+**Proof:**  
 🧪 Mock gameBlock simulation logic (e.g., POST `/api/submit-score`)  
 🗂 Leaderboard and claim routes live in API structure  
 📊 Database schema matches evolving GQT config logic  
@@ -543,23 +529,22 @@ Proof:
 Status: ⏳ Drafting
 
 
+### 🎯 Affordance Strategy Reflection – Core Developers  Level 0 
+#### Affordance: (2) Build MVP Frontend
 
-🎯 Affordance Strategy Reflection – Core Developers  Level 0 
-Affordance: (2) Build MVP Frontend
-
-Definition:  
+**Definition:**  
 Core Developers are responsible for building the front-end interface that enables all other stakeholders to interact with the mock protocol. This includes rendering leaderboards, score submission forms, claim buttons, wallet selection UIs, and state-based views of the evolving mock ecosystem.
 
-Strategic Function:  
+**Strategic Function:**  
 The frontend acts as the **public mirror of the protocol’s logic**, translating backend and schema operations into understandable interactions for Players, Founders, and external observers. It is also the platform where simulation affordances are visualized, tested, and refined. The MVP frontend builds **trust through transparency**, allowing all stakeholders to see what the protocol is becoming — even before it exists on-chain.
 
-Dependencies:  
+**Dependencies:**  
 Players use the frontend to participate in GQTs, submit scores, and claim rewards.  
 Founders rely on it to validate schema visibility and protocol clarity.  
 Marketing captures screenshots, walkthroughs, and demo material from the UI.  
 The DAO will later inherit this visibility layer for auditing and trust signaling.
 
-Failure Risk:  
+**Failure Risk:**  
 Without a usable frontend, no stakeholder can engage with the protocol.  
 Affordances remain invisible or untestable.  
 Simulation fails to generate feedback loops.  
@@ -567,7 +552,7 @@ Public trust cannot form.
 DAO onboarding and reward logic cannot be visualized.  
 Momentum collapses.
 
-Proof:  
+**Proof:**  
 🖥️ Publicly accessible UI (Vercel or equivalent) showing mock leaderboard  
 📤 Score submission + claim action paths rendered visibly  
 🎭 Mock wallet connect and token gating components simulate real flow  
@@ -576,24 +561,23 @@ Proof:
 
 Status: ⏳ Drafting
 
+### 🎯 Affordance Strategy Reflection – Core Developers  Level 0 
+#### Affordance: (3) Implement Leaderboard (Mock MVP)
 
-🎯 Affordance Strategy Reflection – Core Developers  Level 0 
-Affordance: (3) Implement Leaderboard (Mock MVP)
-
-Definition:  
+**Definition:**  
 Core Developers are responsible for implementing a mock leaderboard system during the MVP phase. This includes constructing the frontend UI and backend logic necessary to submit, rank, and display player scores — all within a simulated, off-chain environment. The leaderboard does not rely on CGT token logic but must reflect accurate score states and time-windowed gameplay boundaries.
 
-Strategic Function:  
+**Strategic Function:**  
 The leaderboard is the backbone of visible competition and progression during the mock phase. It allows all stakeholders to test, explore, and communicate around the protocol’s reward logic, game cycles, and participation structure. It anchors player motivation, organizer routing simulations, and ecosystem dashboard experimentation — making it one of the most critical developer-built artifacts at Level 1.
 
-Dependencies:  
+**Dependencies:**  
 - **Players** rely on the leaderboard to verify score submissions from the mock main game. Without visible ranking feedback, gameplay loses continuity and motivation breaks down.  
 - **Reward Pool Organisers** simulate reward splits based on leaderboard position. Without score outputs, prize routing logic has no testable input.  
 - **Marketing & Operations** use leaderboard states in guides, mock screenshots, and educational flows to explain scoring, progression, and claiming. Their public-facing work depends on coherent, viewable mock data.  
 - **Ecosystem Builders** prototype score explorers, dashboards, and overlays that visualize leaderboard trends. These tools require stable mock data to simulate protocol health, top player streaks, or score evolution.  
 - **Founders** depend on the leaderboard to validate that schema objects and affordance boundaries perform coherently in a multi-stakeholder simulation.
 
-Failure Risk:  
+**Failure Risk:**  
 If the leaderboard is not implemented and maintained as a functional mock, Level 1 testing collapses across multiple roles.  
 - Player affordance becomes invisible.  
 - Prize simulations by Organisers are unverifiable.  
@@ -602,7 +586,7 @@ If the leaderboard is not implemented and maintained as a functional mock, Level
 - Documentation and onboarding by Marketing cannot teach protocol logic.  
 The entire simulation phase is rendered inert — mock protocol cohesion fails before decentralization even begins.
 
-Proof:  
+**Proof:**  
 🖥️ Mock leaderboard visible in the frontend during a running game cycle  
 🧪 Backend logic supports score submission, time windows, and ranking  
 📊 Leaderboard data is consumable by explorers, guides, and simulations  
@@ -612,26 +596,26 @@ Proof:
 Status: ⏳ Drafting
 
 
-🎯 Affordance Strategy Reflection – Core Developers  Level 0 
-Affordance: (4) Implement Mock Claim System
+### 🎯 Affordance Strategy Reflection – Core Developers  Level 0 
+#### Affordance: (4) Implement Mock Claim System
 
-Definition:  
+**Definition:**  
 Core Developers are responsible for designing and implementing a mock claim system that enables players to redeem rewards based on their leaderboard positions. While no real CGT is issued, the mock system simulates eligibility, verifies claim status, and returns a stubbed transaction hash to signal successful redemption. The claim system is session-authenticated and integrated into the gameBlock lifecycle.
 
-Strategic Function:  
+**Strategic Function:**  
 This affordance enables the “earn-and-claim” feedback loop foundational to CGT’s gameplay economy. Even at the mock stage, it teaches players how participation yields measurable rewards and prepares the backend for on-chain transitions. It also supports marketing demo flows, ecosystem visualizations, and reward eligibility testing for future GQTs.
 
-Dependencies:  
+**Dependencies:**  
 • **Players** rely on this system to validate leaderboard performance and claim earned rewards in mock form.  
 • **Founders** define the claim cycle duration, expiry policy, and reward allocation logic simulated here.  
 • **Reward Pool Organisers** use this mock system to preview prize logic, routing formats, and fee considerations for future live routing.  
 • **Ecosystem Builders** depend on claim status flags to power historical displays, claim dashboards, or time-sensitive overlays.  
 • **Developers** themselves use this logic to test GQT config compatibility with reward claims and gameBlock flows.
 
-Failure Risk:  
+**Failure Risk:**  
 Without this affordance, players cannot simulate redemption or trust leaderboard cycles. Reward flows remain invisible, making the main game meaningless. No simulation of expiration, scaling, or routing logic is possible. Ecosystem builders and reward pool designers have no mock reference to align their overlays or future routing logic. Trust in early gameplay mechanics would break, stalling adoption.
 
-Proof:  
+**Proof:**  
 ✅ `/api/claim` route accepts valid session wallet and score metadata  
 ✅ Server verifies eligibility, returns mock txHash, prevents duplicate claims  
 ✅ Claims tied to gameBlock IDs and stored with status metadata in Postgres  
@@ -641,26 +625,23 @@ Proof:
 
 Status: ✅ Approved
 
+### 🎯 Affordance Strategy Reflection – Core Developers Level 0  
+#### Affordance: (5) Build Explorer Interface
 
-🎯 Affordance Strategy Reflection – Core Developers Level 0  
-Affordance: (5) Build Explorer Interface
-
-Definition:  
+**Definition:**  
 Core Developers are responsible for delivering the initial mock version of the protocol’s Explorer — a centralized, read-only UI that visualizes scores, claims, and leaderboard participation. At Level 0, this interface is fed by a mock backend (e.g. PostgreSQL) and reflects off-chain protocol logic without any on-chain indexing or Merkle proofs.
 
-
-
-Strategic Function:  
+**Strategic Function:**  
 The Explorer allows players to confirm their presence in the system, developers to verify schema logic in action, and founders to demonstrate a working MVP ecosystem. Though not yet connected to blockchain infrastructure, this layer is critical for ecosystem transparency, schema testing, and early onboarding trust. It supports public visibility into the leaderboard, claim eligibility, and gameBlock participation.
 
-Dependencies:  
+**Dependencies:**  
 Players depend on the Explorer to view their scores and mock claim eligibility.  
 Founders use the Explorer to demonstrate stakeholder visibility and system behavior.  
 Reward Pool Organisers simulate payout logic by referencing leaderboard state.  
 Marketing surfaces Explorer snapshots to show how protocol rewards and visibility work.  
 Ecosystem Builders prototype overlays and indexing logic based on Explorer outputs.
 
-Failure Risk:  
+**Failure Risk:**  
 Without the Explorer, the protocol functions as a black box.  
 Mock claims and rewards are unverifiable.  
 Stakeholders cannot validate their own entries or understand protocol behavior.  
@@ -668,7 +649,7 @@ Testing becomes opaque, limiting feedback and breaking trust cycles.
 Schema remains abstract, with no visual linkage to real usage.  
 The entire ecosystem simulation risks collapse due to lack of visibility.
 
-Proof:  
+**Proof:**  
 📺 `/explorer` route renders leaderboard, scores, and claims  
 🧪 Score and claim data matches schema mock entries  
 🔍 Basic search or filtering by wallet or gameBlock  
@@ -678,16 +659,16 @@ Proof:
 Status: ✅ Approved
 
 
-🎯 Affordance Strategy Reflection – Core Developers Level 0 
-Affordance: (6) Build Wallet Flow
+### 🎯 Affordance Strategy Reflection – Core Developers Level 0 
+#### Affordance: (6) Build Wallet Flow
 
-Definition:  
+**Definition:**  
 Core Developers are responsible for designing and implementing the initial wallet interaction system during the MVP mock phase. At Level 0, this means creating a simulated wallet flow that allows users to "log in" with a mock wallet address, maintain session state, and link that address to scores and claim eligibility within the local system. No real blockchain transactions occur — identity is mimicked through frontend session logic or mock address generators.
 
-Strategic Function:  
+**Strategic Function:**  
 This affordance lays the foundation for all wallet-based affordances across the ecosystem. It allows the protocol to simulate end-to-end user identity: from playing a game, submitting scores, and appearing on a leaderboard, to claiming mock rewards. It supports gameplay, rewards, mock authorization, and sets the standard for how future wallet interactions will function when the real token and smart contract layers activate.
 
-Dependencies:  
+**Dependencies:**  
 Players depend on this flow to simulate access gating, leaderboard participation, and claim actions.  
 Founders rely on this to demonstrate a working prototype and validate identity logic.  
 Reward Pool Organisers use wallet-score mappings to simulate reward splits and claim logic.  
@@ -695,14 +676,14 @@ Ecosystem Builders rely on this format to build overlays or wallet-explorer tool
 Marketing & Ops reference the login/claim journey in documentation, screenshots, or onboarding flows.  
 DAO/Sub-DAOs may later analyze wallet-linked data once schema and explorer affordances evolve.
 
-Failure Risk:  
+**Failure Risk:**  
 Without a working wallet flow, all gameplay, claiming, and leaderboard testing breaks.  
 Players cannot track identity or access simulated rewards.  
 Developers lose the ability to validate claim logic.  
 Founders cannot demonstrate a functional end-to-end mock.  
 The entire Level 0 protocol breaks cohesion and fails to simulate a blockchain-like experience.
 
-Proof:  
+**Proof:**  
 🧪 Players can log in using a mock wallet address.  
 🔑 Session logic persists scores and enables mock claim actions.  
 📊 Leaderboard and explorer views reflect wallet-linked entries.  
@@ -711,23 +692,23 @@ Proof:
 
 Status: ✅ Approved
 
-🎯 Affordance Strategy Reflection – Core Developers  Level 0
-Affordance: (7) Publish Protocol Schema Draft
+### 🎯 Affordance Strategy Reflection – Core Developers  Level 0
+#### Affordance: (7) Publish Protocol Schema Draft
 
-Definition:  
+**Definition:**  
 Core Developers are responsible for producing the initial schema drafts that define stakeholder roles, data models, and system behavior. At Level 0, this includes creating mock or draft-only files that outline how components like claims, score entries, GQT configurations, and metadata should be structured — even if these files are not yet enforced by code or validated through usage.
 
-Strategic Function:  
+**Strategic Function:**  
 Publishing a schema draft creates the foundation upon which the mock protocol, reward logic, GQT configs, and explorer tools are built. It gives Founders, Players, Creators, and Organizers a shared source of truth. By making stakeholder flows explicit, Core Developers transform invisible coordination into structured system logic — a prerequisite for scaling, simulation, and future decentralization.
 
-Dependencies:  
+**Dependencies:**  
 - Founders depend on these schema drafts to lead the mock protocol specification.  
 - Players depend on claim-entry and score-entry schemas to simulate gameplay and rewards.  
 - 3rd-party Creators begin mapping their GQT config drafts around the exposed schema formats.  
 - Reward Pool Organizers and Ecosystem Builders prototype routing, scoring, and overlays based on the schema’s logic shape.  
 - DAO schema indexing starts here — even if passively — enabling future version tracking.
 
-Failure Risk:  
+**Failure Risk:**  
 Without a published schema draft:  
 - System behavior remains implicit, forcing contributors to guess the structure.  
 - Mock logic becomes fragile and unscalable.  
@@ -737,7 +718,7 @@ Without a published schema draft:
 - DAO transitions have no artifact to track schema evolution.  
 The entire protocol becomes locked inside the codebase, preventing strategic collaboration.
 
-Proof:  
+**Proof:**  
 📁 Draft schemas exist for `/score-entry.json`, `/claim-entry.json`, and `GQT.json`  
 🔖 Files include `schemaVersion`, `specStatus`, and stakeholderTag metadata  
 📘 All stakeholder types in use have at least one corresponding schema entry or placeholder  
@@ -746,8 +727,8 @@ Proof:
 Status: ⏳ Drafting
 
 
-🎯 Affordance Strategy Reflection – Core Developers Level 1
-Affordance: (1) Build a playable mock version of the main CGT game
+### 🎯 Affordance Strategy Reflection – Core Developers Level 1
+#### Affordance: (1) Build a playable mock version of the main CGT game
 
 **Description:**  
 Develop a functional front-end and mock back-end to simulate the core CGT game loop. This includes player input, score generation, UI responsiveness, and interaction with leaderboard logic — all without on-chain components. The experience must simulate gameplay credibly enough to allow testing, feedback, and iteration.
@@ -779,8 +760,8 @@ Without a playable mock version:
 **Status:** ✅ Implemented
 
 
-🎯 Affordance Strategy Reflection – Core Developers Level 1
-Affordance: (2) Simulate leaderboard logic for ranking players off-chain
+### 🎯 Affordance Strategy Reflection – Core Developers Level 1
+####  Affordance: (2) Simulate leaderboard logic for ranking players off-chain
 
 **Description:**  
 Develop and deploy the leaderboard system using mock data and off-chain logic to rank players by score. This affordance includes implementing ranking algorithms, supporting pagination or filtering, and rendering scoreboards tied to mock game sessions. All logic must be verifiable through mock payloads and player actions without relying on real tokens or wallets.
@@ -870,22 +851,22 @@ Without gating:
 
 **Status:** ⏳ Drafting
 
-🎯 Affordance Strategy Reflection – Core Developers  Level 1
-Affordance: (5) Simulate off-chain reward distribution
+### 🎯 Affordance Strategy Reflection – Core Developers  Level 1
+#### Affordance: (5) Simulate off-chain reward distribution
 
-Definition:  
+**Definition:**  
 Core Developers implement the reward logic that runs after each gameBlock ends. Based on leaderboard rankings, the system calculates mock rewards and stores them in a claim-ready state tied to each wallet address. This simulation mimics how real blockchain-based token rewards will be distributed in the future.
 
-Strategic Function:  
+**Strategic Function:**  
 This affordance ensures players can experience a realistic version of leaderboard-driven incentives without actual CGT tokens. It closes the loop between gameplay and reward by letting users claim simulated prizes based on rank and gameBlock logic — vital for stress-testing the incentive model, verifying fairness, and previewing future systems.
 
-Dependencies:  
+**Dependencies:**  
 - **Simulate leaderboard ranking logic** → must finalize placements before rewards can be calculated.  
 - **Implement score submission logic** → feeds valid entries into each gameBlock’s dataset.  
 - **Link leaderboard to mock claim system** → must reference these calculated rewards.  
 - Prepares system for **gameBlock-to-claimable-mapping** on future chains (e.g., Solana, Arweave).
 
-🚫 Failure Risk  
+**🚫 Failure Risk:**  
 If the mock reward distribution is omitted or left incomplete:
 - Players will have no way to preview reward expectations or ranking incentives.  
 - Claim validation cannot reference expected reward amounts.  
@@ -894,15 +875,15 @@ If the mock reward distribution is omitted or left incomplete:
 
 > 🔒 Risks are limited to skipped or underdeveloped logic — not architectural flaws — assuming correct use of mock gameBlock finalization and reward calculation strategy.
 
-✅ Proof  
+**✅ Proof:**  
 💾 Cron/job runs after each gameBlock → populates `mock_rewards` by rank.  
 📄 Rewards reference `scoreEntries` and generate mock txHashes for claim traceability.  
 📘 Rewards are viewable in the History Explorer and testable via API.  
 🔐 Claims fail if reward is missing or already claimed (validates logic loop).
 
 
-🎯 Affordance Strategy Reflection – Core Developers  Level 1
-Affordance: (6) Link leaderboard to mock claim system
+### 🎯 Affordance Strategy Reflection – Core Developers  Level 1
+#### Affordance: (6) Link leaderboard to mock claim system
 
 **Description**  
 Expose a user-facing claim flow that allows a wallet-session to redeem the mock reward generated for its leaderboard rank.  
