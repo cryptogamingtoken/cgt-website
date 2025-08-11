@@ -63,7 +63,7 @@ All affordances are validated through a full cross-stakeholder comparison and lo
 | **Founders** | 1.1 | (1) Finalize GQT scaffolding, (2) Finalize core schema, (3) Finalize narrative shape. (4) Lead mock protocol specification. | All logic is simulated. No blockchain deployment. Drives direction for all other roles. |
 | **Core Developers** | 1.1 | (1) Build mock main game flow. (2) Simulate leaderboard ranking logic. (3) Implement score submission logic. (4) Create session-based token gating logic. (5) Simulate off-chain reward distribution. (6) Link leaderboard to mock claim system. | All logic is centralized and off-chain. Enables full MVP testing across roles without CGT deployment. |
 | **Marketing & Operations** | 1.0 | (1) Publish guides, (2) Publish mock API demos, (3) Publish early reward pool simulation breakdowns. (4) Share structure via X and documentation. | No on-chain comms. No live campaigns or reward pool announcements. Early foundation layer only. |
-| **Players** | 1.1 | (1) Play mock main game, (2) submit scores, (3) view sandbox leaderboard, (4) experience simulated token-gating logic. | No CGT tokens exist yet. Access controlled via mock logic, not wallet auth. No premium GQTs unlocked. |
+| **Players** | 1.1 | (1) Engage with Simulated GQT Experiences, (2) Access Token-Gated Mock GQTs, (3) Claim Rewards from Sandbox Leaderboards, (4) Receive Draft GQTs from Creators, (5) Follow Protocol Walkthroughs and Guides. | No CGT tokens exist yet. Access controlled via mock logic, not wallet auth. No premium GQTs unlocked. |
 | **3rd-Party GQT Creators** | 1.0 | (1) Build GQTs in Sandboxed or Shareable Draft mode. (2) Share externally, (3) no CGT listing. | Publishing is creator-controlled. Platform indexing awaits validator system and trust thresholds. |
 | **Reward Pool Organisers** | 1.1 | (1) Simulate prize logic using config schema. (2) Explore routing options, (3) Explore fee logic, (4) Explore mock reward splits. | Pools are schematic only. No treasury access or live payout functionality. |
 | **Stakers** | 1.0 | (1) Monitor staking mechanics in theory. | No token. No real staking or lockups. Learning and planning stage only. |
@@ -918,3 +918,348 @@ If this link is missing or flawed:
 
 **Status:** ⏳ Drafting
 
+<!-- 
+📌 PLACEHOLDER — Marketing & Operations – Level 0 & Level 1 Affordances
+TODO: Replace this comment with final affordance entries.
+Notes:
+- Keep consistent formatting with previous stakeholder affordances (prefix with L0: and L1:)
+- Ensure logical references to L0 where applicable in L1 entries
+- Include any cross-stakeholder dependencies if relevant at this stage
+-->
+
+### 🎯 Affordance Strategy Reflection – Players Level 0  
+#### Affordance: (1) Enter main game
+
+**Definition:**  
+Players can enter and participate in the primary mock game experience hosted on the CGT platform. This includes loading into the game environment, interacting with the UI, and initiating actions that simulate real GQT behavior — such as submitting answers, scores, or making choices. Access is enabled through the mock wallet system.
+
+**Strategic Function:**  
+This affordance anchors **the entire user loop** by allowing individuals to participate as test players before real token logic or permission gating is introduced. It ensures the platform is playable from day one, creates the basis for score tracking and reward testing, and provides the behavioral data required to simulate future economic flows.
+
+**Dependencies:**  
+- Core Developers must implement backend logic to host the main game and handle user interaction.  
+- Mock wallet session must be active to track users and associate results.  
+- Game state must reset or respond appropriately per session or gameBlock.  
+- Leaderboard system must accept and store submitted scores.
+
+**Failure Risk:**  
+If this affordance is missing or buggy:  
+- Users cannot experience the core CGT concept.  
+- Testing of other affordances (score submission, rewards, explorer) is blocked.  
+- Engagement is stalled due to lack of interaction flow.  
+- Ecosystem perception may suffer as the project appears non-functional.
+
+**Proof:**  
+🎮 Main game renders on web client upon login via mock wallet  
+📥 Score submission API is triggered from game completion  
+🧾 Wallet address and result are stored in mock database  
+📄 Game activity is traceable in the Explorer via wallet address  
+👥 Multiple users can concurrently simulate interaction
+
+**Status:** ✅ Live & Testable
+
+
+### 🎯 Affordance Strategy Reflection – Players Level 0  
+#### Affordance: (2) Receive Scores
+
+**Definition:**  
+Once players complete a GQT interaction — whether a game, quiz, or test — the system calculates a score based on performance. This score reflects accuracy, efficiency, or achievement depending on the GQT type and config, and contributes directly to leaderboard rank.
+
+**Strategic Function:**  
+Score feedback is the **core reward signal** across all GQT types. It reinforces effort, provides outcome clarity, and links the experience to downstream systems such as leaderboards, mock rewards, and ecosystem trust visibility. Scoring is the **unifying mechanism** that makes all GQTs measurable and comparable.
+
+**Dependencies:**  
+- Core Developer logic must calculate, store, and return scores after any GQT session.  
+- GQT config must define scoring criteria (e.g., correct answers, completion time, game events).  
+- Leaderboard system must assign the score to the correct wallet for the current gameBlock.  
+- Explorer tools must display score history by wallet and GQT instance.
+
+**Failure Risk:**  
+Without reliable scoring:  
+- Players lose feedback on how they performed in a game, quiz, or test.  
+- Leaderboards cannot reflect effort or ranking.  
+- Mock rewards tied to scores become meaningless.  
+- Trust in the protocol’s integrity declines.
+
+**Proof:**  
+📈 Score output visible immediately after any GQT session  
+🗂 Score entry stored with player wallet and gameBlock metadata  
+🔍 Score retrievable via leaderboard or explorer view  
+📊 Score influences leaderboard rank and mock reward eligibility  
+🧪 GQT simulation tests confirm score generation and boundary behavior
+
+**Status:** ✅ Live & Testable
+
+
+### 🎯 Affordance Strategy Reflection – Players Level 0  
+#### **Affordance: (3) Claim Mock Rewards**
+
+**Definition:**  
+Players are able to claim simulated rewards after participating in a GQT (Game, Quiz, or Test). Once a gameBlock ends and leaderboard rankings are finalized, eligible wallets can initiate a mock claim based on their score and placement. This action mimics how future CGT token claims will be performed once blockchain logic is active.
+
+**Strategic Function:**  
+Claiming closes the GQT loop — connecting participation, performance, and payoff. It introduces the **expectation of value**, reinforcing behavior patterns such as recurring play, leaderboard climbing, and strategic timing. This affordance also allows the protocol to test reward eligibility logic, gameBlock cycle closure, and claim expiration rules. Even in a centralized context, this builds muscle memory for how rewards will function under real staking and token emissions.
+
+**Dependencies:**  
+- Rewards must be **pre-calculated** via the reward distribution logic (Core Developers).  
+- Scores must be **valid** and mapped to eligible gameBlocks.  
+- The **Explorer** must display the claim’s result for traceability.  
+- Wallet or session identity must persist across game participation and claiming.
+
+**🚫 Failure Risk**  
+Without the ability to claim:  
+- The core motivation loop is severed, and player engagement stalls.  
+- Leaderboards have no tangible consequence.  
+- Testing for future CGT flow breaks at the critical handoff point.  
+- Reward expiration logic and timing validations cannot be trialed.  
+- Players cannot preview what claiming will look or feel like.
+
+**✅ Proof**  
+📤 `/api/claim` route exists and responds to valid claim requests.  
+🔐 Claims are one-time and tied to `(wallet, gameBlock)` to prevent duplicates.  
+📆 Claim deadlines are tested against mock expiration windows (e.g., 28 days).  
+🧾 History Explorer displays successful and failed claims.  
+📘 Mock txHashes or claim IDs simulate blockchain traceability.
+
+**Status:** ⏳ Drafting
+
+
+### 🎯 Affordance Strategy Reflection – Players Level 0  
+#### **Affordance: (4) Appear in Explorer**
+
+**Definition:**  
+After participating in a GQT and submitting a score, Players can see their past entries, ranks, and claims within a centralized History Explorer. This allows users to trace their performance across gameBlocks and verify rewards, participation status, and leaderboard history.
+
+**Strategic Function:**  
+The Explorer provides visibility, transparency, and feedback — critical for player retention and ecosystem trust. It allows Players to self-audit their journey and see tangible evidence of their GQT engagement. This visibility also enables future replay analysis, strategic optimization, and community credibility (e.g., using score history for talk show invitations or DAO onboarding).
+
+**Dependencies:**  
+- Scores must be recorded and timestamped.  
+- Claims must be logged and linked to the player wallet or session ID.  
+- Leaderboard data must be mapped to gameBlocks.  
+- Explorer UI must support filtering, pagination, and session-specific lookup.
+
+**🚫 Failure Risk**  
+Without Explorer visibility:  
+- Players cannot validate their GQT participation or rewards.  
+- Errors in score recording or reward distribution remain opaque.  
+- There’s no incentive to improve or analyze performance.  
+- Trust in the system is degraded, harming future transition to on-chain explorers.
+
+**✅ Proof**  
+🧭 Centralized Explorer interface exists (web-based).  
+🔎 Players can search by wallet address and filter by gameBlock or claim status.  
+📜 History shows timestamps, scores, and leaderboard rank per entry.  
+🔐 Claimed vs unclaimed status is shown per leaderboard cycle.  
+📘 Pagination and range filtering are implemented and tested.
+
+**Status:** ⏳ Drafting
+
+
+### 🎯 Affordance Strategy Reflection – Players Level 1  
+#### Affordance: (1) Engage with Simulated GQT Experiences
+
+**Definition:**  
+Players can now interact with fully simulated GQTs — including games, quizzes, and tests — built by core developers or shared by creators. These mock experiences run through a centralized system that replicates real GQT lifecycle mechanics such as start triggers, input recording, and feedback loops.
+
+**Strategic Function:**  
+This affordance establishes **behavioral readiness** for protocol-level interactions. By playing through simulated GQTs, players experience how actual protocol mechanics will behave when live — including score handling, session state, eligibility constraints, and UI/UX expectations. This affordance ensures that players are **trained, tested, and immersed** in a GQT-centric mindset before token-gated or live versions are deployed.
+
+**Dependencies:**  
+Founders: Defined the GQT scaffolding and mock spec players now experience  
+Core Developers: Built mock GQT logic, submission routes, and leaderboard behavior  
+Marketing: Provided walkthroughs to guide player onboarding  
+GQT Creators: May share sandboxed GQT drafts with players for exploration
+
+**Failure Risk:**  
+Without this affordance, players would have **no grounded understanding** of how to navigate GQT mechanics.  
+Protocol feedback loops remain untested by actual users.  
+Future affordances like staking, claiming, or governance may suffer from **low contextual adoption** due to lack of prior simulation.  
+Ecosystem readiness signals for player roles would be absent.
+
+**Proof:**  
+🕹️ GQT experiences (games/quizzes/tests) are available for play via the frontend  
+🛠️ Players submit inputs and receive simulated outcomes (scores, feedback, rankings)  
+📜 Routes for GQT interactions are documented and accessible (e.g., `/api/gqt/:id/play`)  
+🎓 Players participate in test runs that mirror future tokenized experiences  
+📊 Submission data shows live mock GQT usage in backend logs
+
+**Status:** ⏳ Drafting
+
+
+### 🎯 Affordance Strategy Reflection – Players Level 1  
+#### Affordance: (2) Access Token-Gated Mock GQTs
+
+**Definition:**  
+Players can now attempt to access simulated GQTs that are restricted behind mock token-gating logic. While no CGT tokens are yet live, the system emulates access control using mock sessions, wallet logic, or scripted eligibility conditions. This enables realistic simulation of tiered participation, gated access, and staking-preconditioned entry.
+
+**Strategic Function:**  
+This affordance tests the **barrier mechanics** of the CGT protocol — mimicking how real token-based gating will function. It creates friction points that filter participation, ensuring only qualifying users (by role, score, or eligibility) gain access to certain experiences. This prepares the ecosystem for **future CGT-controlled entry** and sets the groundwork for premium GQTs, staking thresholds, and gated tournaments.
+
+**Dependencies:**  
+Core Developers: Implement token-gating logic and eligibility checks (mocked)  
+Founders: Define what types of GQTs are gated and under what conditions  
+Reward Organisers: May simulate gated GQTs tied to prize logic  
+Players: Must use wallet sessions or meet mock eligibility to access
+
+**Failure Risk:**  
+Without this affordance, token-based control mechanisms remain **unproven**.  
+Players lack context for access tiers, token staking, or CGT-based restrictions.  
+Simulated premium GQTs would be indistinguishable from public ones, reducing test fidelity.  
+Protocol evolution would skip over one of the **core mechanics** of access control and privilege.
+
+**Proof:**  
+🔐 Gate logic restricts access to certain mock GQTs based on simulated wallet/session/score  
+🧪 Eligibility paths documented for each gated GQT  
+🎮 Players receive access denial or success response with consistent UI feedback  
+🧾 Logs show gated GQT attempts and resolution state  
+📘 Documentation outlines mock-token-gate schema and test conditions
+
+**Status:** ⏳ Drafting
+
+
+### 🎯 Affordance Strategy Reflection – Players Level 1  
+#### Affordance: (3) Claim Rewards from Sandbox Leaderboards
+
+**Definition:**  
+Players who participate in sandboxed GQT drafts (created either by core developers or 3rd-party GQT Creators) can earn and claim **test CGT** rewards. These rewards are distributed based on performance in mock leaderboard rankings tied to each sandboxed GQT instance.
+
+**Strategic Function:**  
+This affordance serves as the **primary real-world simulation** of what future CGT-based claiming will look like. It lets the ecosystem test reward distribution mechanics, UI patterns, eligibility logic, and leaderboard configuration **before live token deployment**. It also offers **low-friction feedback loops** to evaluate reward pool logic, onboarding flows, and behavioral responses without economic consequences.
+
+**Dependencies:**  
+- Requires Core Developers to build sandbox leaderboard flows with working reward logic  
+- Depends on GQT Creators publishing drafts with working leaderboard → score → reward flow  
+- Relies on mock token infrastructure and clear UI labeling to distinguish test CGT from real CGT  
+- Benefits from Ecosystem Builders creating visual dashboards or overlays showing test claim data  
+
+**Failure Risk:**  
+- If this affordance fails, players lack hands-on experience with the claim flow  
+- Early reward tuning cannot be tested  
+- UI/UX for rewards is unverified  
+- No dry run exists to catch leaderboard config errors or user edge cases  
+- The system risks launching live rewards without sandbox validation, raising breakage risk
+
+**Proof:**  
+🧪 Test CGT reward data stored and retrievable per player  
+📊 Leaderboard entries visibly trigger test reward eligibility  
+🛠️ UI elements (e.g., "Claim Test CGT") present and functional  
+📁 Distinction between mock main game rewards and sandbox draft test CGT rewards  
+📘 Documentation or tooltip clarifies that rewards are testnet-only and non-monetary  
+
+Status: ⏳ Drafting
+
+
+### 🎯 Affordance Strategy Reflection – Players Level 1  
+#### Affordance: (4) Participate in Shareable Draft GQTs (TestCGT)
+
+**Definition:**  
+Players can actively join GQTs created in Shareable Draft Mode and deployed by either Core Developers or 3rd-Party GQT Creators. These GQTs run on the TestCGT mock economy layer, and while they must conform to protocol rules and logic, they are isolated from the live token environment.
+
+**Strategic Function:**  
+This affordance enables broad-scale user testing, gameplay balance feedback, and protocol trialing without risking the integrity of the final CGT token. It accelerates ecosystem growth by allowing parallel experimentation and early onboarding into the GQT structure.  
+
+It also provides the only real method of pre-launch gameplay for experimental GQTs that are not part of the main mock game and allows the community to explore content that may be listed post-launch.
+
+**Dependencies:**  
+- Core Developers: must support Shareable Draft functionality and protocol compliance checks  
+- 3rd-Party GQT Creators: must create compliant GQTs in draft mode  
+- TestCGT reward system: must be in place for sandboxed and shared drafts  
+- Protocol Schema: must define what rules are enforced in draft mode  
+
+**Failure Risk:**  
+- GQTs in draft mode fail to follow protocol logic or offer misleading gameplay  
+- Lack of engagement may prevent testing of core reward logic  
+- Players may not clearly understand the distinction between TestCGT and real CGT  
+- Potential feedback loops are missed before protocol launch  
+
+**Proof:**  
+🧪 Players successfully enter draft GQTs through frontend links or shared URLs  
+📊 Score submission and participation data logged in TestCGT-mode environments  
+🛠️ Shareable GQTs offer basic reward previews and display protocol conformance  
+📁 Mock reward logic observed during gameplay sessions  
+
+Status: ⏳ Drafting
+
+
+### 🎯 Affordance Strategy Reflection – Players Level 1  
+#### Affordance: (5) Follow Protocol Walkthroughs and Guides
+
+**Definition:**  
+Players can access and follow official walkthroughs, quick-start guides, and onboarding materials that explain how to participate in the **pre-launch & sandbox ecosystem** — specifically: joining the mock main GQT, entering Shareable Draft GQTs (TestCGT), submitting scores, viewing leaderboards, and claiming test rewards.
+
+**Strategic Function:**  
+This affordance lowers friction for players to **successfully play mock and draft GQTs** using the flows that exist at Level 1. Clear, accurate guides reduce confusion around mock wallet sessions, token-gating behavior, leaderboard timing, and the distinction between **MockCGT (main MVP)** and **TestCGT (draft GQTs)**. It ensures consistent participation and correct use of claim paths ahead of live CGT.
+
+**Dependencies:**  
+- **Marketing & Operations** – author and publish player-facing guides that reflect current Level-1 behavior.  
+- **Core Developers** – keep guides accurate by aligning UI labels, endpoints, and flows with documented steps.
+
+**Failure Risk:**  
+- Players misinterpret token-gating or reward eligibility, leading to failed or duplicate claim attempts.  
+- Confusion between MockCGT and TestCGT reduces trust and participation.  
+- Support load increases due to missing or outdated instructions.  
+- Inconsistent player behavior skews early testing data (leaderboard/claim stats).
+
+**Proof:**  
+🧩 Guides exist in the docs site and are linked from relevant UI states (e.g., “How to enter a Draft GQT”).  
+🧪 Spot-checks confirm guide steps match live endpoints and UI labels.  
+📈 Basic analytics show guide views correlate with successful joins/claims.  
+📝 Known-issues/FAQs section tracks resolved player misunderstandings.
+
+Status: ⏳ Drafting
+
+
+### 🎯 Affordance Strategy Reflection – 3rd-Party GQT Creators Level 0  
+#### Affordance: (1) Protocol documentation available; cannot publish GQTs but can design around the config  
+
+**Definition:**  
+At Level 0, 3rd-Party GQT Creators gain access to **core protocol documentation** detailing configuration parameters, structural rules, and component interoperability for GQTs. While they cannot publish live GQTs or participate in the active protocol, they can begin **designing conceptual GQTs** around these specifications for future deployment.
+
+**Strategic Function:**  
+This affordance ensures creators can start aligning their concepts with the protocol’s technical and gameplay constraints **well before live participation is unlocked**. It seeds the ecosystem with ready-to-build concepts and encourages early familiarisation with the GQT framework, minimising the learning curve when publishing rights are granted at higher levels.
+
+**Dependencies:**  
+- Requires Founders to release a publicly accessible protocol documentation set  
+- Depends on Core Developers maintaining accurate and up-to-date config specifications  
+
+**Failure Risk:**  
+- Without access to protocol documentation, creators cannot prepare viable GQT concepts in advance  
+- Lack of early design alignment may cause rework when live publishing becomes possible  
+- The ecosystem risks a slow onboarding of creator-driven content at higher levels due to unprepared participants  
+
+**Proof:**  
+📄 Protocol documentation is accessible to prospective creators  
+📘 Documentation includes config rules, GQT component descriptions, and example structures  
+🛠️ Creators produce draft designs or mockups referencing official config parameters  
+
+Status: ⏳ Drafting  
+
+
+### 🎯 Affordance Strategy Reflection – 3rd-Party GQT Creators Level 1  
+#### Affordance: (1) Build GQTs in Sandboxed or Shareable Draft Mode
+
+**Definition:**  
+3rd-Party GQT Creators can design and launch GQTs in **Sandbox** (private, test-only) or **Shareable Draft** (public via link) modes. Shareable Drafts may be **published** by the creator (live and embeddable under their control) but are **not platform-indexed/listed** by default; platform discovery remains gated by future validator/trust thresholds.
+
+**Strategic Function:**  
+This affordance provides a low-friction way to test GQT behavior “in the wild,” gather gameplay/quiz/test feedback, and validate reward and pacing—**without implying platform endorsement**. It reduces risk before creators choose to **publish** more broadly or request **platform indexing** later.
+
+**Dependencies:**  
+- Core Developers – draft/publish toggles, draft storage, and conformance checks.  
+- Protocol Schema – defines what rules are enforced in draft modes.  
+- Players – supply usage data by trying shared drafts.  
+- (Founders) – clarify the semantics of **published (creator-controlled)** vs **platform-indexed**.
+
+**Failure Risk:**  
+- Without drafts, creators either ship straight to **Published** without iteration or stall entirely.  
+- Lower quality/reward-logic defects reach audiences prematurely.  
+- Confusion between **published** and **platform-indexed** states if semantics aren’t documented.
+
+**Proof:**  
+🧪 Creators can save a GQT as **Sandbox** or **Shareable Draft**.  
+🔗 Shareable URLs work for external testers; creator can **publish** (live/embeddable) without platform indexing.  
+📊 Draft play data (scores/completions) is captured for review.  
+📘 Docs/UI clearly distinguish **Published (creator-controlled)** vs **Platform-Indexed (validator-gated)**.
+
+Status: ⏳ Drafting
