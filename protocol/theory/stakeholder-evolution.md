@@ -1235,6 +1235,92 @@ This affordance ensures creators can start aligning their concepts with the prot
 
 Status: ⏳ Drafting  
 
+### 🎯 Affordance Strategy Reflection – 3rd-Party GQT Creators Level 1  
+#### Affordance: (1) Build GQTs in Sandboxed or Shareable Draft Mode
+
+**Definition:**  
+3rd-Party GQT Creators can design and launch GQTs in **Sandbox** (private, test-only) or **Shareable Draft** (public via link) modes. Shareable Drafts may be **published** by the creator (live and embeddable under their control) but are **not platform-indexed/listed** by default; platform discovery remains gated by future validator/trust thresholds.
+
+**Strategic Function:**  
+This affordance provides a low-friction way to test GQT behavior “in the wild,” gather gameplay/quiz/test feedback, and validate reward and pacing—**without implying platform endorsement**. It reduces risk before creators choose to **publish** more broadly or request **platform indexing** later.
+
+**Dependencies:**  
+- Core Developers – draft/publish toggles, draft storage, and conformance checks.  
+- Protocol Schema – defines what rules are enforced in draft modes.  
+- Players – supply usage data by trying shared drafts.  
+- (Founders) – clarify the semantics of **published (creator-controlled)** vs **platform-indexed**.
+
+**Failure Risk:**  
+- Without drafts, creators either ship straight to **Published** without iteration or stall entirely.  
+- Lower quality/reward-logic defects reach audiences prematurely.  
+- Confusion between **published** and **platform-indexed** states if semantics aren’t documented.
+
+**Proof:**  
+🧪 Creators can save a GQT as **Sandbox** or **Shareable Draft**.  
+🔗 Shareable URLs work for external testers; creator can **publish** (live/embeddable) without platform indexing.  
+📊 Draft play data (scores/completions) is captured for review.  
+📘 Docs/UI clearly distinguish **Published (creator-controlled)** vs **Platform-Indexed (validator-gated)**.
+
+Status: ⏳ Drafting
+
+
+### 🎯 Affordance Strategy Reflection – 3rd-Party GQT Creators Level 1  
+#### Affordance: (2) Share Externally
+
+**Definition:**  
+3rd-Party GQT Creators can share their GQTs outside the CGT platform by generating shareable links or embed codes. These GQTs may be hosted on the creator’s own channels, websites, or communities, allowing direct player engagement without requiring CGT platform discovery. This affordance operates with **no platform indexing until trust scores are implemented**, at which point only GQTs meeting the **minimum trust threshold** will be eligible for indexing.
+
+**Strategic Function:**  
+This affordance allows creators to independently promote and grow their audience, bypassing CGT’s native discovery tools until they meet trust requirements. It supports pre-launch momentum building, niche audience targeting, and early engagement testing. It also gives creators freedom to validate gameplay, scoring, and reward flow without waiting for platform listing eligibility.
+
+**Dependencies:**  
+- Core Developers: must provide shareable link/embed generation tools and hosting integration  
+- Protocol Schema: must define which components remain sandboxed vs. public  
+- Trust & Indexing Framework: must be ready before creators can apply for official indexing  
+
+**Failure Risk:**  
+- Without this affordance, creators are limited to platform-native discovery (when available), restricting early adoption  
+- Audience growth may stagnate pre-trust score implementation  
+- Creators unable to embed externally may struggle to build communities before indexing approval  
+- Risk of unclear messaging to players about whether a GQT is officially indexed or independent  
+
+**Proof:**  
+🧪 Shareable links/embeds generated successfully from GQT creator dashboard  
+📊 External player engagement tracked and attributable to GQT  
+📁 GQTs remain non-indexed until trust score eligibility met  
+📘 Documentation explaining indexing eligibility and trust thresholds  
+
+Status: ⏳ Drafting
+
+
+### 🎯 Affordance Strategy Reflection – 3rd-Party GQT Creators Level 1  
+#### Affordance: (3) No CGT Listing
+
+**Definition:**  
+3rd-Party GQT Creators can publish GQTs without having them included in the CGT platform’s **homepage discovery, featured sections, or native search indexing**. These GQTs will still generate game blocks with their own leaderboards and will always remain accessible via the CGT Explorer, ensuring transparency and trackability. Indexing into CGT’s discovery features will only occur once the **Trust & Indexing Framework** is active and the GQT meets the **minimum trust score threshold**.
+
+**Strategic Function:**  
+This affordance allows creators to launch and promote their GQTs without waiting for discovery placement approval, while ensuring that only verified and trusted GQTs are showcased in high-visibility areas of the platform. This protects player experience, maintains platform quality, and prevents the promotion of unverified or low-quality content through official CGT channels, while still enabling gameplay, leaderboard competition, and explorer visibility from day one.
+
+**Dependencies:**  
+- Core Developers: must support non-indexed publishing with full leaderboard and explorer integration  
+- Protocol Schema: must define the rules and conditions for discovery/indexing eligibility  
+- Core Developers: must implement and manage the Trust & Indexing Framework, including minimum trust score requirements  
+
+**Failure Risk:**  
+- Without this affordance, unverified GQTs could be promoted prematurely in discovery areas, risking player trust  
+- Creators may be blocked from launching if discovery approval is a prerequisite  
+- Confusion may arise if there’s no clear distinction between discovery-listed and non-listed GQTs  
+- Platform quality perception could suffer if discovery features are not protected by trust gating  
+
+**Proof:**  
+🧪 Creators can publish GQTs with leaderboard and explorer access but without discovery placement  
+📊 Player engagement metrics remain trackable via leaderboards and explorer, independent of discovery listing  
+📁 GQTs remain absent from homepage discovery and featured areas until trust threshold is met  
+📘 Documentation clearly explains discovery listing requirements and trust score criteria  
+
+Status: ⏳ Drafting
+
 
 ### 🎯 Affordance Strategy Reflection – 3rd-Party GQT Creators Level 1  
 #### Affordance: (1) Build GQTs in Sandboxed or Shareable Draft Mode
@@ -1263,3 +1349,579 @@ This affordance provides a low-friction way to test GQT behavior “in the wild,
 📘 Docs/UI clearly distinguish **Published (creator-controlled)** vs **Platform-Indexed (validator-gated)**.
 
 Status: ⏳ Drafting
+
+
+### 🎯 Affordance Strategy Reflection – Reward Pool Organisers Level 0  
+#### Affordance: (1) View Mock Tournament / Claim Logic
+
+**Definition:**  
+At Level 0, the **Founders act as the initial Reward Pool Organisers**, directly configuring and operating mock tournament prize logic within the MVP environment. This visibility is not passive — Founders actively set up leaderboard → claim flows, define preliminary prize distribution models, and validate configuration rules. All activity is conducted in a fully **mock environment** with no live token routing, ensuring safe testing of the reward pool pipeline before public organisers are introduced.
+
+**Strategic Function:**  
+This affordance ensures that the foundational prize logic and claim process are established by the very stakeholders responsible for shaping the protocol’s operational standards. By running the first end-to-end simulations themselves, Founders:  
+- Define the baseline logic and workflows that all future organisers will inherit  
+- Identify configuration gaps or misalignments before the protocol schema is finalised  
+- Test leaderboard integration, claim triggers, and prize calculation methods in real operational conditions (without economic consequence)  
+- Establish clear documentation and configuration precedents for onboarding later organisers  
+
+This is not merely observation — it is **operational implementation** that directly influences the structural integrity of all future reward pool operations.
+
+**Dependencies:**  
+- **Core Developers**: Must build and maintain mock leaderboard, prize logic, and claim routing systems for Level 0 testing  
+- **Founders**: As organisers, must configure, run, and refine mock tournaments to generate validated baseline prize logic
+
+**Failure Risk:**  
+- Flawed logic introduced at this stage risks becoming embedded into the core protocol, impacting all future organisers  
+- Missing or poorly tested configuration rules could lead to payout errors or exploitable logic when live tokens are introduced  
+- Overlooking adaptability needs may result in rigid systems that fail to accommodate diverse GQT formats later on  
+
+**Proof:**  
+🧪 Mock tournaments successfully configured and run end-to-end  
+📊 Leaderboard-to-claim flow validated without errors  
+📁 Prize logic definitions recorded and linked to protocol documentation  
+📘 Early organiser guidelines drafted for future onboarding reference  
+
+Status: ⏳ Drafting
+
+### 🎯 Affordance Strategy Reflection – Reward Pool Organisers Level 0  
+#### Affordance: (2) Simulate Fees (No Live Token Routing)
+
+**Definition:**  
+At this stage, Reward Pool Organisers operate in a fully mock environment with no live CGT token movement. Their sole functional focus is simulating **fee structures** for hypothetical tournaments and reward pools, testing percentage splits, fixed fee models, or hybrid approaches without executing any on-chain transactions. This provides a risk-free environment to evaluate how fee logic interacts with leaderboard and claim systems.
+
+**Strategic Function:**  
+By running fee simulations early, organisers (initially the founders acting as seed organisers) can refine baseline economic models for later prize pools. These tests create the first feedback loop for fee percentages, organiser incentives, and fairness models, all without treasury exposure. This narrow focus at Level 0 is intended to **scale directly into the broader Level 1 toolkit**—where fee simulation becomes one part of a larger prize logic framework that also includes routing options, mock reward splits, and schematic prize design.
+
+**Dependencies:**  
+- **Founders:** act as initial organisers to seed tournament fee scenarios  
+- **Core Developers:** implement mock fee simulation logic in the backend  
+- **Protocol Schema:** define how fee parameters will be structured and stored in config  
+- **Ecosystem Builders:** may observe outputs to inform future dashboard/overlay design  
+
+**Failure Risk:**  
+- Without this affordance, there is no pre-launch validation of fee models  
+- Organisers would enter Level 1 without tested assumptions on sustainable fee percentages  
+- Lack of fee simulation may lead to unbalanced organiser incentives later  
+- Early economic modelling opportunities would be lost  
+
+**Proof:**  
+🧪 Mock fee scenarios can be created and adjusted in a simulation tool  
+📊 Outputs show percentage breakdowns and projected organiser rewards  
+📁 Fee models are stored according to the protocol schema (even in mock form)  
+📘 Documentation exists for interpreting fee simulation results  
+
+Status: ⏳ Drafting
+
+
+### 🎯 Affordance Strategy Reflection – Reward Pool Organisers Level 1  
+#### Affordance: (1) Simulate Prize Logic Using Config Schema
+
+**Definition:**  
+At Level 1, Reward Pool Organisers use the published **config schema** to define and simulate prize logic for GQTs (main and Shareable Drafts). Configurable fields include (illustrative): `rewardSplits`, `eligibilityBands`, `tieBreakers`, `claimWindows`, and `payoutOrder`. Simulations run **off‑chain** against leaderboard outputs and produce **mock** reward allocations (no live treasury routing).
+
+**Strategic Function:**  
+This affordance moves organisers from Level‑0 fee tinkering to **full prize‑model prototyping**. By expressing prize rules in schema‑valid configs, organisers can iterate on reward bands, fairness curves, and timing windows, then immediately see their effects on mock leaderboard results. It establishes a repeatable, testable path from **design → simulate → review**, preparing both creators and the platform for later on‑chain equivalents.
+
+**Dependencies:**  
+- **Core Developers** — expose/validate the prize‑related config schema; provide simulation endpoints producing mock allocations from leaderboard data.  
+- **Players** — generate leaderboard results that the simulation consumes.  
+- **3rd‑Party GQT Creators** — publish Shareable Draft GQTs whose configs reference the same schema, enabling cross‑testing.  
+- **Founders** — set policy guardrails (e.g., minimum claim windows, anti‑abuse tie‑breakers) and approve schema changes.
+
+**Failure Risk:**  
+- If prize logic is not expressed via schema (or poorly validated), organisers drift into ad‑hoc rules that won’t survive later contractization.  
+- Missing guardrails (e.g., tie‑breakers/eligibility bands) lead to ambiguous or gameable outcomes.  
+- Inconsistent simulations undermine trust in later reward pools and slow creator adoption.
+
+**Proof:**  
+🧪 A schema‑valid prize config (JSON/YAML) runs through a simulation endpoint and returns mock allocations per rank/band.  
+📊 Simulation outputs reference a specific leaderboard/gameBlock and are reproducible.  
+📁 Configs pass validation (schema version, required fields, allowed ranges) and are stored for audit.  
+📘 Short guide shows “design → simulate → review” with examples and common pitfalls.
+
+Status: ⏳ Drafting
+
+### 🎯 Affordance Strategy Reflection – Reward Pool Organisers Level 1  
+#### Affordance: (2) Explore Routing Options (Sandbox TestCGT → Published MockCGT)
+
+**Definition:**  
+At Level 1, Reward Pool Organisers design and test reward **routing policies** across two pre‑launch contexts:
+- **Shareable Draft (TestCGT)** — creator‑hosted drafts using the test economy.
+- **Published (MockCGT)** — published GQTs using the platform’s mock economy.
+
+Routing policies specify *where* simulated rewards are recorded for later claims (e.g., per‑GQT mock ledgers or player‑scoped balances). All routing remains **off‑chain**; no live treasury movement occurs.
+
+**Strategic Function:**  
+This affordance standardizes routing behavior across **Draft** and **Published** states. Organisers prove that one policy, expressed in schema‑valid config, behaves predictably in both contexts—preserving eligibility, timing, and auditability. That consistency is the bridge from pre‑launch simulations to future on‑chain routing.
+
+**Dependencies:**  
+- **Core Developers** — expose routing policy fields in the config schema; provide dual‑context simulation endpoints (`executionContext: "testCGT" | "mockCGT"`); persist mock allocation records.  
+- **3rd‑Party GQT Creators** — supply GQTs in Shareable Draft and Published states to exercise the policy in both contexts.  
+- **Players** — generate leaderboard results that the routing simulation consumes.  
+- **Founders** — define guardrails (no cross‑context leakage, consistent claim windows, minimum audit fields).
+
+**Failure Risk:**  
+- Context divergence (Draft vs. Published) causes inconsistent allocations or claimability.  
+- Missing audit fields block Explorer/History visibility and reduce trust.  
+- Over‑customized policies per context create migration pain when drafts are published.  
+- Ambiguous schema fields yield organiser‑specific “house rules” that won’t contractize cleanly.
+
+**Proof:**  
+🧩 A routing policy exists inside a prize config and **validates** against the current schema (including `executionContext`).  
+🧪 The **same config** is executed in **TestCGT** and **MockCGT** contexts and returns allocations without errors.  
+📄 A small **parity check artifact** (e.g., `routing-parity.json`) shows allocations are consistent for identical inputs.  
+🔎 Mock allocation records are **queryable** by Explorer/History (fields: `gqtId`, `gameBlockId`, `wallet`, `amount`, `context`).  
+📘 A brief doc note explains how to run Draft → Published routing with the same policy.
+
+Status: ⏳ Drafting
+
+
+### 🎯 Affordance Strategy Reflection – Reward Pool Organisers Level 1  
+#### Affordance: (3) Explore Fee Logic
+
+**Definition:**  
+Reward Pool Organisers can access and experiment with the mock fee logic that governs reward pool allocations, including platform fees, creator fees, and any configured organiser fees. This affordance supports the creation of fee structures for both the main game and 3rd-party GQTs, showing how these interact with the CGT protocol’s overall distribution model over the 24-month reward cycle. If no external organiser is set, **founders, core developers, or 3rd-party GQT creators act as default organisers for their respective GQTs and draft GQTs during this stage**.
+
+**Strategic Function:**  
+This affordance enables organisers to test how different fee structures affect reward distribution and stakeholder payouts without touching live treasury funds. It also prepares them to communicate fee breakdowns transparently to players and other stakeholders. By simulating platform-level fees, creator fees, and organiser fees, organisers can optimise for sustainability, fairness, and competitiveness before live deployment.
+
+**Dependencies:**  
+- Core Developers: must implement mock fee calculation tools in the organiser dashboard.  
+- 3rd-Party GQT Creators: may configure and test their own fee logic for their GQTs.  
+- Founders: set baseline platform fee parameters in the mock environment.  
+
+**Failure Risk:**  
+- Without early exploration, organisers may misjudge the balance between sustainability and player appeal.  
+- Incorrect fee assumptions could cause friction when moving from mock to live environments.  
+- Lack of early alignment between platform and creator fee logic may require disruptive changes post-launch.  
+
+**Proof:**  
+🧪 Organisers generate multiple fee configurations and observe their impact in mock payout simulations.  
+📊 Mock dashboard displays clear breakdown of platform, creator, and organiser fee allocations.  
+📁 Fee configurations are stored and retrievable for iteration.  
+📘 Documentation explains how fee logic integrates into overall CGT distribution mechanics.  
+
+Status: ✅ Locked
+
+
+### 🎯 Affordance Strategy Reflection – Reward Pool Organisers Level 1  
+#### Affordance: (4) Explore Mock Reward Splits
+
+**Definition:**  
+Reward Pool Organisers simulate **reward splits** in both **draft environments using TestCGT** and **mock environments using MockCGT**. Splits explicitly include **staking commission splits alongside platform, creator, and organiser fees**, with wallet addresses specified for each recipient. Simulations verify that routing behaves as intended across gameBlocks and GQTs before live deployment or indexing.
+
+**Strategic Function:**  
+By exercising split logic (including staking commissions) ahead of launch, organisers surface fairness issues, UX clarity gaps, and routing edge cases early. These simulations create a dependable baseline that early stakeholders requiring to organise and test reward pools can rely on.Stakers can later consume for incentive-difficulty modelling and that Founders can use to tune platform policy without touching live funds.
+
+**Dependencies:**  
+- **Core Developers** – provide split configuration UI + routing simulators for TestCGT/MockCGT.  
+- **Protocol Schema** – defines standard split fields (platform/creator/organiser/**staking commission**) and wallet assignment rules.  
+- **3rd-Party GQT Creators** – supply organiser/creator wallet details for their own GQTs when acting as organisers.  
+- **Founders** – set baseline platform split parameters for testing.
+
+**Failure Risk:**  
+- Missing staking commission handling causes downstream misalignment with staking incentives.  
+- Misconfigured wallet routing leads to incorrect allocations at launch.  
+- Inconsistent split semantics across GQTs undermines perceived fairness and trust.  
+- Lack of dual-environment testing (TestCGT + MockCGT) hides discrepancies that surface post-launch.
+
+**Proof:**  
+🧪 TestCGT simulations show correct routing to **platform/creator/organiser/staking commission** wallets.  
+🧪 MockCGT simulations show identical logic and totals across equivalent scenarios.  
+📊 Split reports enumerate percentage and absolute amounts for each recipient, per gameBlock.  
+📘 Docs specify required split fields and wallet validation rules (incl. staking commission split).
+
+Status: ✅ Locked
+
+
+### 🎯 Affordance Strategy Reflection – Stakers Level 0  
+#### Affordance: (1) No action at MVP; staking mechanics not live, no reward influence  
+
+**Definition:**  
+At Level 0, external stakers cannot participate directly in rewards. However, the **staking framework is anticipated**: difficulty-style reward adjustments are planned, mirroring the adaptive competitiveness of Bitcoin mining rather than halving schedules. Core schema must therefore **reserve routing slots for staking commissions**, even if dormant, to prevent adoption risks or later conflicts.  
+
+**Strategic Function:**  
+This affordance ensures that stakers are “in the picture” from the outset, even if inactive. By embedding dormant commission logic into routing schemas, other stakeholders (Reward Pool Organisers, Founders, Core Developers) can design and test around future staking needs. Early projections tie difficulty adjustments to ecosystem adoption rates, giving Founders a planning lens and Developers a technical roadmap for schema hooks. This avoids resistance when stakers activate and ensures fee structures remain future-proof.  
+
+**Dependencies:**  
+- **Founders**: define difficulty curve assumptions and project adoption-linked adjustments.  
+- **Core Developers**: implement dormant commission slots in routing schemas and document difficulty adjustment logic.  
+- **Reward Pool Organisers**: include placeholder staking commissions in simulated fee splits for draft and mock environments.  
+- **Players**: generate participation data that will eventually inform staking difficulty adjustments.  
+
+**Failure Risk:**  
+- Without dormant commission slots, adding staking later may trigger schema rewrites, fee conflicts, or resistance from organisers/creators.  
+- Confusing staking with halving could misalign incentive design and erode credibility.  
+- Lack of early simulation deprives Founders and Developers of foresight into balancing rewards across stakeholders.  
+
+**Proof:**  
+🧪 Schema includes dormant “staking commission” routing slot visible in config but set to 0% at MVP.  
+📊 Reward Pool Organiser simulations display placeholder staking allocations alongside platform, creator, and organiser splits.  
+📘 Documentation distinguishes halving (distribution schedule) from difficulty-style staking rewards.  
+📈 Early projections tie simulated staking difficulty to ecosystem participation metrics.  
+
+**Status:** ⏳ Drafting  
+
+
+### 🎯 Affordance Strategy Reflection – Stakers Level 1  
+#### Affordance: (1) Monitor Staking Mechanics in Theory
+
+**Definition:**  
+Stakers (primarily Founders/Core Developers acting as proto-stakers at this stage) **monitor and model** staking incentives off-chain. They do not stake real CGT yet; instead they analyse projected yields and difficulty-style adjustments using simulated inputs from fee/split scenarios and adoption projections.
+
+**Strategic Function:**  
+This establishes a data-driven bridge between **fee/split design** and **future staking incentives**, ensuring the protocol won’t over- or under-reward stake when live. The modelling helps pre-empt adoption traps by aligning staking attractiveness with platform growth phases.
+
+**Dependencies:**  
+- **Reward Pool Organisers** – provide mock fee routing outputs **including staking commission splits** that feed into staking incentive calculations.  
+- **Founders** – publish provisional staking policy levers (e.g., difficulty curve parameters) for modelling.  
+- **Core Developers** – expose read-only reports/exports of split simulations and usage metrics to drive forecasting.  
+
+**Failure Risk:**  
+- If staking incentive models ignore staking commission splits, live rewards can become misaligned with actual treasury flows.  
+- Lack of read-only access to organiser simulations blocks meaningful projections.  
+- Overly optimistic assumptions (without organiser data) risk later rework and trust erosion.
+
+**Proof:**  
+📈 Internal spreadsheet/notebook models consume organiser split exports (incl. staking commission split) and output projected APR bands.  
+🗂️ Versioned “Staking Modelling Notes” link scenarios to specific organiser simulation runs.  
+🧪 Sensitivity tests show how changes in split percentages or activity levels affect projected staking yields.
+
+Status: ⏳ Drafting
+
+
+### 🎯 Affordance Strategy Reflection – Ecosystem Builders Level 0  
+#### Affordance: (1) See structure of GQT/score claims; can architect future layers  
+
+**Definition:**  
+At Level 0, Ecosystem Builders primarily observe and interpret the structures being created by Founders and Core Developers. Their affordance is to **see the early scaffolding of GQT composition, score claim pathways, and schema outlines**, giving them the foundation to imagine overlays, tools, and integrations for future levels. This role is less about execution and more about **clarifying visibility** into what exists, so later efforts can plug into a coherent framework.  
+
+**Strategic Function:**  
+This affordance marks the separation between **Core Developers building for function** and **Ecosystem Builders planning for community-facing growth**. By observing system flows and schema visibility, they can identify what elements will need tooling (dashboards, explorers, APIs) and what gaps could create friction for external builders. Their role is critical in preparing the environment for expansion by ensuring transparency and planning alignment from the start.  
+
+**Dependencies:**  
+- Founders: provide protocol narrative and schema draft visibility.  
+- Core Developers: surface mock leaderboard, claims, and explorer logic for observation.  
+- Reward Pool Organisers: their mock simulations must be visible for ecosystem mapping.  
+
+**Failure Risk:**  
+- If visibility is poor at this stage, future ecosystem builders may lack the clarity to design overlays or plan integrations.  
+- Without separation from core development, ecosystem building may be reduced to ad-hoc developer tasks, limiting growth.  
+- Misinterpretation of scaffolding could lead to tools being planned against unstable or changing elements.  
+
+**Proof:**  
+🧩 Access to protocol schema drafts (read-only).  
+📊 Visibility of leaderboard and claim logic in mock form.  
+📘 Early notes or diagrams capturing how these flows appear from a system-wide view.  
+🧪 Evidence of builders beginning to sketch overlays or potential tools (even informally).  
+
+Status: ⏳ Drafting
+
+
+### 🎯 Affordance Strategy Reflection – Ecosystem Builders Level 1  
+#### Affordance: (1) Build overlays
+
+**Definition:**  
+Ecosystem Builders create lightweight, read-only visual layers that sit atop Core Developer outputs (mock game flow, score submission, leaderboard state). Overlays render live indicators—e.g., score velocity, rank deltas, gameBlock timers—without modifying protocol logic or storage.
+
+**Strategic Function:**  
+Overlays turn raw system behavior into human-legible signals for Players, Founders, and Marketing. They accelerate feedback loops during Level 1 by exposing timing, fairness, and performance characteristics in real time, supporting narrative clarity and early trust without adding new rules.
+
+**Dependencies:**  
+- **Core Developers:** stable endpoints for mock game sessions, score submission, and leaderboard rankings (L1 Dev affordances 1–3).  
+- **Founders:** narrative cues (what to visualize and why) so overlays reinforce protocol story and testing goals.  
+- **Players:** live traffic to generate meaningful telemetry (scores, session events).  
+- **3rd‑Party GQT Creators:** sandbox/shareable drafts to broaden overlay coverage beyond the main game.  
+- **Protocol Schema:** field names and IDs for scores, gameBlocks, and ranks to ensure overlay queries remain compatible.
+
+**Failure Risk:**  
+- If overlays don’t exist, stakeholders fly blind on timing, fairness, and rank dynamics.  
+- If overlays couple tightly to unstable fields, breakage occurs when schemas iterate.  
+- Misleading visuals (e.g., mixing draft vs. mock environments) can erode trust and confuse Marketing materials.  
+- Lack of SLAs/health checks can make overlays unreliable during demos.
+
+**Proof:**  
+🧪 Overlay connects to read-only endpoints; no write access.  
+📊 Live panels display rank deltas, gameBlock countdowns, and submission throughput.  
+🧩 Works across main mock game and at least one shareable draft GQT.  
+🔁 Basic resilience: tolerates schema version bumps using a lightweight adapter or mapping.  
+📸 Screenshots/GIFs included in docs for Marketing & Founder updates.
+
+**Status:** ⏳ Drafting
+
+
+### 🎯 Affordance Strategy Reflection – Ecosystem Builders Level 1  
+#### Affordance: (2) Build dashboards  
+
+**Description:**  
+Ecosystem Builders create dashboards that consolidate data from the mock protocol (scores, leaderboards, claims, gameBlocks) into usable, visual interfaces. Dashboards should allow Founders, Developers, and other stakeholders to track system activity at a glance, without digging into raw API calls or databases.  
+
+**Strategic Function:**  
+Dashboards act as the **ecosystem’s lens** on itself — the first layer where stakeholders see the protocol as a whole rather than isolated parts. They enable Founders to validate assumptions, Developers to monitor performance, and Marketing to present screenshots or walkthroughs. They also prepare the ground for Explorers and public interfaces later.  
+
+**Dependencies:**  
+- **Core Developers** must have working leaderboard and claim logic (mock state acceptable).  
+- **Founders** provide KPI definitions (what to track, how to measure).  
+- **Players** and **Reward Pool Organisers** generate the activity that populates dashboards.  
+
+**🚫 Failure Risk:**  
+If dashboards are missing or underdeveloped:  
+- Stakeholders will be blind to system progress and rely only on scattered API endpoints.  
+- Founders lose visibility on whether KPIs (claims, rewards, score flows) match expectations.  
+- Marketing lacks visual tools to communicate system maturity.  
+- Ecosystem Builders risk being sidelined into ad hoc tooling rather than structured overlays.  
+
+**✅ Proof:**  
+- 🖥️ A functional dashboard UI is accessible and loads without error.  
+- 📊 Charts and tables display **live mock data** (not static screenshots).  
+- 🔄 At least one interactive control (filter, toggle, or refresh) updates the view.  
+- 📑 Data shown aligns with a Founder-defined KPI (e.g., leaderboard ranks, claim counts).  
+
+**Status:** ⏳ Drafting  
+
+### 🎯 Affordance Strategy Reflection – Ecosystem Builders Level 1  
+#### Affordance: (3) Build testnet tools using mock data
+
+**Description**  
+Ecosystem Builders create utilities that mimic testnet‑style experimentation without requiring live contracts or on‑chain deployment. These tools let contributors rehearse blockchain flows in a safe mock environment. Examples: block replay scripts, score/claim injectors, schema validators, and claim stress‑testers.
+
+**Strategic Function**  
+Mock testnet tools de‑risk the eventual move to real testnets. They enable edge‑case simulation, validate evolving schemas, and rehearse cycles like leaderboard closure, claim timing, and block restarts. They also accelerate onboarding: new contributors can practice with realistic flows before any token or contract is live.
+
+**Dependencies**  
+- **Core Developers** — provide mock leaderboard, claim, and reward logic as data sources.  
+- **Founders** — use tool outputs to validate pacing, reward fairness, and schema robustness.  
+- **Players** — benefit from previews of future blockchain‑style interactions.  
+- **Reward Pool Organisers** — dry‑run prize logic in a sandbox prior to live routing.
+
+**Failure Risk**  
+- No safe way to experiment or test new ideas.  
+- Edge cases (duplicate claims, malformed payloads) go untested.  
+- Onboarding is slower; contributors learn only after testnet launch.  
+- Migration to real testnets becomes riskier and more error‑prone.
+
+**Proof**  
+🛠️ Replay tool re‑runs mock gameBlocks against leaderboard logic.  
+📑 Schema validator checks sample payloads against protocol rules.  
+⚡ Stress‑tester simulates high‑volume score submissions and claims.  
+📈 Logs/dashboards record test cycles for Founder/Dev review.
+
+**Status:** ⏳ Drafting
+
+
+### 🎯 Affordance Strategy Reflection – Ecosystem Builders Level 1  
+#### Affordance: (4) Align early tooling to evolving schemas  
+
+**Description:**  
+Ecosystem Builders create tools that keep pace with the evolving protocol schemas drafted by Founders and Developers. At this level, alignment is not enforced but demonstrated through overlays, dashboards, or testnet utilities that adopt the latest schema changes. The aim is to show feasibility of schema-driven tooling without guaranteeing permanent stability.  
+
+**Strategic Function:**  
+This affordance ensures Ecosystem Builders stay tightly coupled with protocol evolution. By adapting their tools to schema changes, they act as the first external validators of schema usability, highlighting issues before wider adoption. Their efforts help Founders and Developers see how schema drafts behave in “live” mock environments and prepare for cross-stakeholder use.  
+
+**Dependencies:**  
+- **Founders** – supply evolving schema drafts that Builders must track.  
+- **Core Developers** – publish mock API/data outputs that Builders consume.  
+- **Players/Creators** – indirectly benefit when Builders produce schema-aligned utilities for history, leaderboard, or reward previews.  
+
+**Failure Risk:**  
+If tooling drifts from the evolving schema:  
+- Builders may produce overlays that misrepresent protocol behavior.  
+- Founders/Devs lose valuable feedback on schema usability.  
+- Players/Creators interacting with these tools may be misled by outdated data.  
+- Schema changes risk being adopted too slowly or without external validation.  
+
+**Proof:**  
+- ✅ Tools demonstrate adoption of the latest available schema drafts.  
+- ✅ Dashboards and overlays provide a way to reflect updated data structures.  
+- ✅ Builders can show working examples where schema changes are incorporated into their outputs.  
+- ✅ Gaps or mismatches between schema drafts and tools are logged for Founders/Devs to address.  
+
+**Status:** ⏳ Drafting  
+
+
+### 🎯 Affordance Strategy Reflection – Service Providers Level 0  
+#### Affordance: (1) Begin identifying integration and monitoring opportunities  
+
+**Description:**  
+At Level 0, Service Providers are not independent operators but *proto-enablers*. Their main role is to read early outputs from Founders, Developers, and Marketing, then reframe them into usable context for new or less-technical creators. This includes spotting where integration challenges might arise, noting monitoring gaps, and suggesting simplified workflows that make protocol drafts or MVP features more understandable.  
+
+**Strategic Function:**  
+The Service Provider affordance ensures that the ecosystem’s earliest complexity does not overwhelm new entrants. By identifying and communicating integration and monitoring opportunities, they act as interpreters — turning schema drafts, whitepaper notes, and roadmap items into onboarding-friendly context. This provides a softer entry point for 3rd-Party Creators who may not have deep technical expertise but still need to design around early protocol concepts.  
+
+**Dependencies:**  
+- **Founders (0.0)** – provide roadmap control and protocol authority as the raw material Service Providers interpret.  
+- **Core Developers (0.0)** – publish MVP schemas/drafts which Service Providers simplify into practical context.  
+- **Marketing & Operations (0.0)** – supply comms (whitepaper, website, Telegram/CMC) that Service Providers extend into user-focused guides.  
+- **3rd-Party GQT Creators (0.1)** – benefit directly from simplified guidance when starting to conceptualize GQTs.  
+- **Ecosystem Builders (0.1)** – create prototypes; Service Providers translate or explain those prototypes for less-technical audiences.  
+
+**Failure Risk:**  
+If Service Providers fail at this stage:  
+- Early creators may misinterpret schema drafts or struggle with onboarding.  
+- Marketing/whitepaper outputs remain too abstract to be applied.  
+- Developers and Founders lose indirect feedback on how their drafts “land” with non-technical participants.  
+- The path to Level 1 creator activity becomes steeper, slowing ecosystem growth.  
+
+**Proof:**  
+- ✅ Early guides exist that simplify schema or MVP logic for creators.  
+- ✅ Feedback loops form where Service Providers highlight onboarding challenges to Founders/Devs.  
+- ✅ Community channels (Telegram/website) include explanatory posts beyond raw comms.  
+- ✅ New creators begin to use protocol drafts without heavy Dev/Founder handholding.  
+
+**Status:** ⏳ Drafting  
+
+
+### 🎯 Affordance Strategy Reflection – Service Providers Level 1  
+#### Affordance 1: (1) Begin interpreting protocol drafts through a service lens  
+
+**Description:**  
+At Level 1, Service Providers move from passive observers into **active interpreters of protocol drafts**. Their role is to take early schemas, mock flows, and scaffolding produced by Founders and Developers, and filter them through a **service-oriented perspective**. The outcome is **structured insights that anticipate creator needs**, highlight potential friction, and map where service interventions could matter most.  
+
+**Strategic Function:**  
+This affordance establishes Service Providers as the **ecosystem’s first translators of technical intent into service meaning**. They don’t build tools or deliver solutions yet — but by reading drafts through a service lens, they lay the foundation for future onboarding, documentation, and operational pathways.  
+
+**Dependencies:**  
+- **Founders** – depend on finalized scaffolding and schema narrative as the core material for interpretation.  
+- **Core Developers** – depend on mock flows (leaderboard, scoring, gating, claims) as the technical baseline to analyze.  
+- **Marketing & Operations** – provide early guides and framing that Service Providers cross-reference when interpreting for service relevance.  
+
+**Failure Risk:**  
+If Service Providers fail to interpret protocol drafts:  
+- Blind spots remain in schema design, leading to higher onboarding friction later.  
+- Service interventions emerge too late, forcing reactive fixes instead of proactive pathways.  
+- Developers and Founders shoulder all explanation load, slowing ecosystem readiness.  
+
+**Proof:**  
+- ✅ Evidence of **draft annotations or service-lens summaries** circulated internally.  
+- ✅ Documentation that highlights **service gaps in protocol drafts**.  
+- ✅ Clearer marketing/creator guides emerge when aligned with Service Provider insights.  
+
+**Status:** ⏳ Drafting  
+
+
+### 🎯 Affordance Strategy Reflection – Service Providers Level 1  
+#### Affordance 2: (2) Support GQT Creators by explaining or summarizing process steps  
+
+**Description:**  
+At Level 1, Service Providers actively **bridge the gap between protocol drafts and creator action**. They summarize mock flows and schema into **step-by-step onboarding sequences**, guiding 3rd-Party GQT Creators who are experimenting with sandbox or shareable draft GQTs.  
+
+**Strategic Function:**  
+This affordance positions Service Providers as **frontline enablers of creator momentum**. By providing structured service explanations, they reduce friction, ensure GQTs move beyond conceptual form, and accelerate the flow of draft GQTs into usable outputs.  
+
+**Dependencies:**  
+- **3rd-Party GQT Creators** – Service Providers only activate meaningfully once sandbox/draft GQTs exist that require guidance.  
+- **Founders** – provide finalized scaffolding and schema narrative for translation into onboarding steps.  
+- **Core Developers** – deliver the mock flows that Service Providers reshape into clear creator pathways.  
+- **Marketing & Operations** – publish stats, narratives, and guides that Service Providers adapt into actionable sequences.  
+
+**Failure Risk:**  
+If Service Providers fail to support creators:  
+- Sandbox GQTs may stall at conceptual level.  
+- Misinterpretations of schema could lead to invalid GQT designs.  
+- Developers face unsustainable explanation demand.  
+- Early creator energy is lost, weakening the ecosystem pipeline.  
+
+**Proof:**  
+- ✅ Observable **correlation between intentional Service Provider activity and improved ecosystem stats** (Creators, Players, Organisers, etc.).  
+- ✅ Guides, notes, or onboarding aids that clearly derive from mock flows and schema.  
+- ✅ Increased number and quality of draft GQTs traceable to Service Provider intervention.  
+- ✅ Demonstrable reduction in repeated explanation requests to Developers or Founders.  
+
+**Status:** ⏳ Drafting  
+
+
+### 🎯 Affordance Strategy Reflection – DAO / Sub-DAOs Level 0  
+#### Affordance: (1) Passive Schema Monitoring  
+
+**Description:**  
+At Level 0, the DAO exists only in a **dormant, observational state**. It has no governance powers, treasury routing, or proposal mechanisms. Its sole affordance is to **track and observe protocol schema drafts and ecosystem evolution** across all nine other stakeholder roles. This “sleeping mirror” function ensures that when DAO activation does occur, it awakens with a contextual memory of how the system reached its current state.  
+
+**Strategic Function:**  
+This affordance gives the DAO a foundational baseline: it is *aware* of ecosystem development without yet influencing it. By quietly monitoring schema changes, mock implementations, and stakeholder affordances, the DAO builds continuity and prepares for its future role as a coordinating body. This prevents “cold-start blindness,” ensuring that once proposals and treasury control are introduced, DAO members can reference a history of decisions and structures already in motion.  
+
+**Dependencies:**  
+- **Founders** – define the initial protocol scaffolding and schema drafts the DAO tracks.  
+- **Core Developers** – produce mock implementations (leaderboard, claims, explorer) that serve as observable anchors.  
+- **Marketing & Operations** – distribute documentation and comms that indirectly inform what the DAO is aware of.  
+- **All Stakeholders** – by exercising their Level 0 affordances, they generate the activity the DAO mirrors.  
+
+**Failure Risk:**  
+If this affordance is ignored or underdeveloped:  
+- DAO activation risks beginning with no historical grounding, creating weak legitimacy.  
+- Stakeholder tensions may arise later if early processes weren’t passively tracked.  
+- Ecosystem memory is fragmented, forcing future governance to “reinvent” context.  
+- Protocol evolution could lose credibility if DAO oversight appears disconnected.  
+
+**Proof:**  
+- ✅ DAO reference docs or logs showing awareness of schema drafts and affordance expansions.  
+- ✅ Alignment notes demonstrating continuity between early mock systems and DAO-visible state.  
+- ✅ Evidence that DAO has *tracked but not acted* at this stage (no proposals, no treasury control).  
+- ✅ Schema snapshots stored with “DAO-observed” tag in documentation or version history.  
+
+**Status:** ⏳ Drafting  
+
+
+### 🎯 Affordance Strategy Reflection – DAO / Sub-DAOs Level 1  
+#### Affordance: (1) Passive Schema Monitoring  
+
+**Definition:**  
+At Level 1, the DAO remains non-governing but upgrades from generic observation to **schema-indexed monitoring**. It records the appearance and evolution of stakeholder artifacts (e.g., `scoreEntry`, `claimEntry`, `GQTConfigDraft`, `feeConfig`, `schemaVersion`, `guideDocRef`) and tags them by stakeholder type, version, and timestamp. No proposals, voting, or fund routing occur.  
+
+**Strategic Function:**  
+This creates a verifiable readiness ledger for future activation. By passively tracking which stakeholders are producing which artifacts (and how those artifacts change over time), the DAO establishes the evidence base needed for later trust thresholds, indexing eligibility, and weight-setting — without influencing outcomes yet.  
+
+**Dependencies:**  
+- **Founders (L1):** finalized scaffolding & core schema provide the artifact namespaces and version fields the DAO indexes.  
+- **Core Developers (L1):** mock flows (leaderboard, score, claims, gating) emit entries the DAO can tag and count.  
+- **3rd-Party GQT Creators (L1):** sandbox/shareable drafts generate `GQTConfigDraft` & related metadata for monitoring.  
+- **Reward Pool Organisers (L1):** mock configs/fee splits surface routable parameters to observe (no funds moved).  
+- **Marketing & Ops (L1):** published guides create `guideDocRef`/onboarding artifacts that can be referenced as ecosystem signals.  
+- **Players (L1):** score/claim histories form the activity baseline the DAO passively tallies.  
+
+**Failure Risk:**  
+- Without schema-indexed monitoring, the DAO will later lack auditable provenance for trust scores and activation thresholds.  
+- Readiness becomes anecdotal, making governance timing contentious.  
+- Indexing/listing criteria can’t be justified with evidence, undermining credibility.  
+
+**Proof:**  
+- ✅ A passive registry (read-only) that logs artifact type, stakeholder tag, version, and timestamp.  
+- ✅ Basic counts/indicators (e.g., “draft GQTs active,” “claims recorded this block,” “schemaVersion in use”).  
+- ✅ Documentation describing that the DAO observes but does not influence at L1 (no proposals/votes/treasury).  
+- ✅ Sample snapshots showing cross-stakeholder artifact coverage (players, creators, devs, organisers, marketing).  
+
+**Status:** ⏳ Drafting  
+
+### 🎯 Affordance Strategy Reflection – DAO / Sub-DAOs Level 1  
+#### Affordance: (2) Awaiting full system readiness before DAO ladder activates  
+
+**Description:**  
+At Level 1, the DAO does not take part in governance or decision-making. Its role is to **log readiness signals** across all other stakeholders, ensuring that when the DAO ladder eventually activates, its baseline is accurate and aligned with the real ecosystem state. The DAO functions as a passive **tracking scaffold**, registering whether stakeholders are performing the activities expected of them at this stage.  
+
+**Strategic Function:**  
+This affordance clarifies the DAO’s preparatory role: it is **not yet governance**, but it is already **observing and recording**. By treating every stakeholder affordance as a “signal to be logged,” the DAO establishes the ground truth needed for later governance simulation. This ensures that no stakeholder can enter Level 2 claiming influence without a history of observable actions during Level 0 and Level 1.  
+
+**Dependencies:**  
+- **Founders** – DAO tracks whether scaffolding, schema drafts, and narrative frameworks exist as baseline protocol definitions.  
+- **Core Developers** – DAO tracks whether mock flows (leaderboard, score submission, reward, claim) are live as readiness signals.  
+- **Marketing & Operations** – DAO tracks whether guides, demos, or communications have been published to support ecosystem awareness.  
+- **Players** – DAO tracks whether sandbox participation and claim attempts are happening, even in test CGT.  
+- **3rd-Party GQT Creators** – DAO tracks whether sandbox or shareable draft GQTs are being created and circulated.  
+- **Reward Pool Organisers** – DAO tracks whether mock configs or fee simulations are being run, regardless of treasury use.  
+- **Stakers** – DAO tracks whether staking mechanics are being theorized or simulated as part of readiness prep.  
+- **Ecosystem Builders** – DAO tracks whether overlays, dashboards, or schema-aligned tools are being prototyped.  
+- **Service Providers** – DAO tracks whether onboarding or support activity for creators is happening, even informally.  
+
+**Failure Risk:**  
+If the DAO does not log these readiness signals:  
+- Governance scaffolding may lack context when the ladder activates.  
+- Stakeholders could claim influence without any traceable history.  
+- Later DAO simulations (Level 2 Prep) would be ungrounded in reality, leading to skewed balances of power.  
+- The ecosystem risks entering governance phases without a validated baseline.  
+
+**Proof:**  
+- ✅ DAO monitoring layer records stakeholder actions as metadata signals.  
+- ✅ Schema or mock flows contain tags/logs that can be referenced later.  
+- ✅ Dashboards or explorers surface read-only “readiness signals” tied to each stakeholder.  
+- ✅ No proposals, votes, or treasury access are available at this stage.  
+
+**Status:** ⏳ Drafting  
