@@ -927,6 +927,85 @@ Notes:
 - Include any cross-stakeholder dependencies if relevant at this stage
 -->
 
+
+### 🎯 Affordance Strategy Reflection – Marketing & Ops Level 1  
+#### Affordance: (3) Publish Early Reward Pool Simulation Breakdowns  
+
+**Definition:**  
+At Level 1, Marketing & Operations are responsible for publishing digestible breakdowns of early reward pool simulations. These are not investor reports but communication artifacts that explain—in clear, narrative-driven terms—how mock prize pools behave under different configurations. The intent is to provide transparency, demystify the reward logic for non-technical stakeholders, and prepare the ground for creators and organisers to design with confidence.  
+
+**Strategic Function:**  
+This affordance establishes Marketing as the bridge between backend economics and community comprehension. By translating reward simulation outputs into plain language, visuals, and narratives, Marketing ensures that stakeholders (creators, organisers, players) understand how reward pools scale, split, and expire. This builds confidence in the fairness and adaptability of the system before live token routing begins.  
+
+**Dependencies:**  
+- **Founders (L1 – Finalize Core Schema, Lead Mock Protocol Spec):** Provide baseline definitions of routing fields and timing windows.  
+- **Core Developers (L1 – Simulate Off-Chain Reward Distribution, Explore Fee Logic, Explore Reward Splits):** Supply the raw mock simulation data to be translated.  
+- **Reward Pool Organisers (L1 – Simulate Prize Logic, Explore Routing Options):** Depend on Marketing outputs to validate whether their config logic is understood by the broader ecosystem.  
+- **Players (L1 – Claim Rewards from Sandbox Leaderboards):** Need clear, public-facing explanations of why rewards appear as they do to maintain trust.  
+- **DAO / Sub-DAOs (L1 – Passive Schema Monitoring):** Index the published artifacts as readiness signals, using them to verify that reward transparency obligations are being met.  
+
+**Failure Risk:**  
+If early reward pool simulations are not published:  
+- **Organisers** may misjudge how to configure pools and later feel blindsided by actual reward economics.  
+- **Creators** could design GQTs without anticipating routing or split logic, leading to wasted effort or misaligned mechanics.  
+- **Builders** would lack concrete data anchors, resulting in dashboards or overlays that fail to match future outputs.  
+- **DAO** logs would miss key readiness artifacts, leaving transparency gaps in the economic layer.  
+- **Founders and Developers** would appear to be withholding critical information, weakening credibility at the exact stage when openness is expected.  
+
+The absence of these breakdowns doesn’t just create general opacity — it directly undermines trust in **reward distribution mechanics**, eroding confidence in both organisers and the wider economic narrative.  
+
+**Proof:**  
+- 📊 Published breakdowns of mock reward pool allocations, distributed through the CGT website and X account.  
+- 📘 Documentation entries explaining reward pool configurations in narrative form (supported by visuals).  
+- 🖼️ Infographics or charts illustrating how splits, fee structures, and expiry windows behave.  
+- 🧾 Indexed references in DAO readiness logs showing Marketing fulfilled transparency obligations.  
+
+**Status:** ⏳ Drafting  
+
+### 🎯 Affordance Strategy Reflection – Marketing & Operations Level 1  
+#### Affordance: (4) Share Structure via X and Documentation  
+
+**Definition:**  
+At Level 1, Marketing & Operations is responsible for publishing the structural foundations of the protocol — including mock API demos, early schema explanations, and strategic framing — through public channels such as X and formal documentation. This is not polished marketing; it is scaffolding visibility. The intent is to show that the protocol has internal shape, logic, and trajectory, even while it remains centralized and founder-operated.  
+
+**Strategic Function:**  
+This affordance turns the protocol’s hidden structure into visible signals. By sharing scaffolding on X, in whitepaper drafts, and in evolving docs, Marketing demonstrates that CGT is more than a speculative idea: it is an organized system with rules, roles, and direction. This builds trust, prepares external observers for Level 2 activity, and funnels early adopters into the ecosystem. Importantly, at this stage, all “Marketing” outputs are authored directly by the Founder — serving as both documentation and a recruiting signal for future stakeholders.  
+
+**Dependencies:**  
+All stakeholders rely on this affordance for clarity, even if the Founder is the one operating multiple roles at this stage:  
+- **Founders** → Depend on published structure to assert narrative control and avoid ambiguity in multi-role execution.  
+- **Core Developers** → (Founder-operated) Require structured comms to validate and externalize their own mock implementations; future high-performing players may enter via these signals.  
+- **Players** → Depend on X threads, guides, and docs to understand how to engage with the mock game, leaderboard, and claims.  
+- **3rd-Party GQT Creators** → Rely on structural explanations to begin designing drafts around config rules and schema. At this stage, they emerge as a small subset of players responding to these signals.  
+- **Reward Pool Organisers** → Depend on documented prize, claim, and fee logic to simulate their workflows.  
+- **Stakers** → Depend on structural transparency around dormant commission slots and reward schedules for future alignment.  
+- **Ecosystem Builders** → Rely on published schema and mock API demos to architect overlays, dashboards, and early tools.  
+- **Service Providers** → Depend on these outputs to simplify and reframe structure for creators and onboarding.  
+- **DAO / Sub-DAOs** → Depend on whitepaper/docs/X comms as passive schema-indexed signals, forming their readiness ledger.  
+
+**Failure Risk:**  
+If structural publishing via X and documentation is weak or absent:  
+- Stakeholders act in silos without a shared protocol shape.  
+- Players lose clarity on how their actions connect to wider protocol logic.  
+- Creators cannot align drafts with system scaffolding.  
+- Organisers and Stakers cannot simulate fair routing.  
+- Builders and Service Providers lack anchor points for overlays or guides.  
+- DAO readiness ledger is incomplete, weakening future governance legitimacy.  
+
+**Proof:**  
+- 📄 Whitepaper drafts circulated with evolving schema and scaffolding sections.  
+- 🧾 Documentation folder containing mock API endpoints, schema outlines, and role explanations.  
+- 🧵 X threads publishing structure snapshots, narrative cues, and protocol demos.  
+- 🔎 Explorer and mock API demos linked from X and docs to show structural logic in action.  
+
+**Status:** ⏳ Drafting  
+
+---
+
+🔍 **Expanded Affordance Statement**  
+📢 **Share Structure via X and Documentation**  
+Turn hidden protocol scaffolding into visible public signals by publishing mock API demos, schema explanations, and early narrative framing on X and in documentation — ensuring all stakeholders have clarity and legitimacy anchors, even while these roles remain Founder-operated at Level 1.
+
 ### 🎯 Affordance Strategy Reflection – Players Level 0  
 #### Affordance: (1) Enter main game
 
