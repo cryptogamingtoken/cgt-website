@@ -1,14 +1,14 @@
 import NavBar from '../components/NavBar'
+import ClaimButton from '../components/ClaimButton'
+
 export default function About() {
   return (
-    <main className="min-h-screen bg-gray-950 text-gray-100">
-      <div className="max-w-3xl mx-auto px-6 py-12 space-y-12">
-
-        {/* Header */}
-        <section className="space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
-            About CryptoGamingToken
-          </h1>
+    <>
+      <NavBar />
+      <main className="p-6">
+        <h1 className="text-3xl font-bold text-gray-800">
+          About CryptoGamingToken
+        </h1>
 
           <p className="text-lg leading-relaxed text-gray-200">
             <strong>
