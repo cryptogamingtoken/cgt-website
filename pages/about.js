@@ -1,3 +1,4 @@
+import NavBar from '../components/NavBar'
 export default function About() {
   return (
     <main style={{ maxWidth: "720px", margin: "0 auto", padding: "4rem 1.5rem" }}>
